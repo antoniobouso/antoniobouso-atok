@@ -1,0 +1,3 @@
+nombre,tipo,equipo,temporada,talles,numero,fotos,descripcion,encargo,destacado
+Ejemplo titular,camiseta,,,"S:stock; M:stock; L:sin stock",si,,,si,si
+Ejemplo short,short,,,"M:consultar",si,,,no,no

@@ -1,0 +1,251 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  display: inline-flex;
+  padding: 6px 0;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  margin-left: 3px;
+  margin-bottom: 3px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+  margin-left: 24px;
+}
+
+.navLink {
+  position: relative;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 550;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.navLink:hover,
+.navLink[aria-current="page"] {
+  color: var(--white);
+}
+.navLink[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 2px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ig {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 10px 12px;
+  transition: color 0.2s;
+}
+.ig:hover {
+  color: var(--gold);
+}
+
+.cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 6px 0 14px;
+  background: none;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 550;
+  transition: border-color 0.2s;
+}
+.cart:hover {
+  border-color: var(--gold);
+}
+
+.count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--steel);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+  transition: background 0.3s, color 0.3s;
+}
+.count[data-filled="true"] {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 0;
+  position: relative;
+}
+.burger span {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 2px;
+  background: var(--white);
+}
+.burger span:first-child {
+  top: 17px;
+}
+.burger span:last-child {
+  top: 25px;
+  right: 18px;
+}
+
+/* ---------- Mobile menu ---------- */
+
+.menu {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0 var(--gutter) 32px;
+  border: 0;
+  background: var(--black);
+  color: var(--white);
+  display: none;
+  flex-direction: column;
+}
+.menu[open] {
+  display: flex;
+  animation: menuIn 0.4s var(--ease);
+}
+.menu::backdrop {
+  background: #000;
+}
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+.menuTop {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.close {
+  min-height: 44px;
+  padding: 0 4px;
+  background: none;
+  border: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.menuNav {
+  display: grid;
+  margin-top: 16px;
+}
+
+.menuLink {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.menuLink small {
+  grid-column: 2;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.menuNum {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+.menuIg {
+  margin-top: auto;
+  padding-top: 24px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .nav,
+  .ig {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+@media (max-width: 420px) {
+  .cartLabel {
+    display: none;
+  }
+  .cart {
+    padding: 0 6px;
+  }
+}

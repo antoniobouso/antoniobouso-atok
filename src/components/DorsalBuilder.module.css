@@ -1,0 +1,132 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+.stage {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #0f0f0f, #050505);
+  overflow: hidden;
+}
+.spot {
+  position: absolute;
+  inset: -10% 10% 20%;
+  background: radial-gradient(closest-side, rgba(255, 244, 210, 0.16), transparent);
+  pointer-events: none;
+}
+.shirt {
+  width: 74%;
+  height: 74%;
+  position: relative;
+  filter: drop-shadow(0 40px 40px rgba(0, 0, 0, 0.6));
+}
+.caption {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 10px;
+  color: var(--muted-2);
+}
+.panel {
+  display: grid;
+  gap: 28px;
+  align-content: start;
+}
+.numInput {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 64px;
+  min-height: 96px;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+}
+.quick {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.quick button {
+  min-width: 52px;
+  min-height: 44px;
+  background: none;
+  border: 1px solid var(--line-strong);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+.quick button:hover,
+.quick button[aria-pressed="true"] {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.kits {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.kits legend {
+  margin-bottom: 12px;
+}
+.kit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 14px 0 8px;
+  border: 1px solid var(--line-strong);
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+}
+.kit input {
+  position: absolute;
+  opacity: 0;
+}
+.kit:has(input:checked) {
+  border-color: var(--gold);
+}
+.kit:has(input:focus-visible) {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid;
+}
+.prices {
+  margin: 0;
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+.prices div {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.prices dt {
+  color: var(--muted);
+}
+.prices dd {
+  margin: 0;
+  font-weight: 650;
+}
+@media (max-width: 860px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+}

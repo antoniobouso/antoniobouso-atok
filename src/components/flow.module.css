@@ -1,0 +1,114 @@
+/* Shared layout for the inquiry pages (encargos, mayorista) */
+.hero {
+  padding-block: clamp(40px, 6vw, 88px) clamp(40px, 5vw, 64px);
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(70% 80% at 85% 0%, rgba(212, 175, 55, 0.1), transparent 70%);
+}
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: end;
+  margin-top: 20px;
+}
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line-strong);
+  margin: 0;
+}
+.kpis div {
+  padding: 16px 16px 0 0;
+  display: grid;
+  gap: 6px;
+}
+.kpis div + div {
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+.kpis dt {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.kpis dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.9;
+  color: var(--gold);
+}
+.kpis small {
+  font-size: 0.36em;
+  color: var(--muted);
+}
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(32px, 6vw, 96px);
+  padding-block: clamp(48px, 7vw, 96px) clamp(72px, 9vw, 120px);
+  align-items: start;
+}
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: calc(var(--header-h) + 32px);
+}
+.steps li {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 4px 12px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.steps li > span {
+  grid-row: span 2;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--gold);
+}
+.steps strong {
+  font-weight: 600;
+}
+.steps p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.form {
+  display: grid;
+  gap: 18px;
+}
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.note {
+  padding: 14px 16px;
+  border-left: 3px solid var(--gold);
+  background: rgba(212, 175, 55, 0.06);
+  font-size: 14px;
+}
+@media (max-width: 900px) {
+  .heroGrid,
+  .body {
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    position: static;
+  }
+}
+@media (max-width: 520px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+  .kpis div + div {
+    padding-left: 10px;
+  }
+}

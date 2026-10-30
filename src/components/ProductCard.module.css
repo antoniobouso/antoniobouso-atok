@@ -1,0 +1,122 @@
+.card {
+  min-width: 0;
+}
+.link {
+  display: grid;
+  gap: 16px;
+}
+.stage {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background:
+    radial-gradient(70% 55% at 50% 38%, rgba(255, 255, 255, 0.1), transparent 70%),
+    linear-gradient(180deg, #171717, #0a0a0a);
+  border: 1px solid var(--line);
+  transition: border-color 0.4s var(--ease);
+}
+:global(.paper) .stage {
+  background:
+    radial-gradient(70% 55% at 50% 38%, #fff, transparent 75%),
+    linear-gradient(180deg, #e9e3d4, #ddd5c2);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.link:hover .stage {
+  border-color: var(--gold);
+}
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 12%;
+  transition:
+    opacity 0.5s var(--ease),
+    transform 0.6s var(--ease);
+}
+.front > *,
+.back > * {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.45));
+}
+.back {
+  opacity: 0;
+  transform: scale(0.96);
+}
+@media (hover: hover) {
+  .link:hover .back {
+    opacity: 1;
+    transform: none;
+  }
+  .link:hover .front:has(+ .back) {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+}
+.index {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--gold);
+}
+:global(.paper) .index {
+  color: var(--gold-ink);
+}
+.sample {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  color: var(--muted);
+}
+:global(.paper) .sample {
+  color: #5b574f;
+}
+.body {
+  display: grid;
+  gap: 6px;
+}
+.line {
+  color: var(--muted);
+  font-size: 11px;
+}
+:global(.paper) .line {
+  color: #5b574f;
+}
+.name {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 4px 12px;
+  margin-top: 4px;
+}
+.meta > * {
+  white-space: nowrap;
+}
+.price {
+  font-weight: 650;
+}
+@media (max-width: 560px) {
+  .name {
+    font-size: 15px;
+  }
+  .meta :global(.status) {
+    font-size: 11px;
+  }
+}
+[data-status="out_of_stock"] .stage > div {
+  opacity: 0.55;
+}

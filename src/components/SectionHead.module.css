@@ -1,0 +1,26 @@
+.head {
+  display: grid;
+  gap: 24px;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.bar {
+  width: 48px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.aside {
+  max-width: 380px;
+}

@@ -1,0 +1,35 @@
+.panel {
+  display: grid;
+  gap: 20px;
+  padding: clamp(20px, 3vw, 36px);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: radial-gradient(80% 60% at 100% 0%, rgba(212, 175, 55, 0.1), transparent 70%), #0a0a0a;
+}
+.head {
+  display: grid;
+  gap: 10px;
+}
+.msg {
+  margin: 0;
+  padding: 16px;
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  background: #000;
+  border: 1px solid var(--line);
+  color: #d8d8d8;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.status {
+  min-height: 1.4em;
+  font-size: 14px;
+  color: var(--ok);
+}
