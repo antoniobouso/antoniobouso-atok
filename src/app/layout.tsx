@@ -6,6 +6,7 @@ import "@fontsource/instrument-serif/latin-400";
 import "@fontsource-variable/inter/index.css";
 import "./globals.css";
 import { BRAND } from "@/config/business";
+import { asset } from "@/lib/paths";
 import { CartProvider } from "@/lib/cart";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "ATOK",
   },
   alternates: { canonical: "/" },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: asset("/icon.svg") },
 };
 
 export const viewport: Viewport = {

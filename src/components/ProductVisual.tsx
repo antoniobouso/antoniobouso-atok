@@ -1,4 +1,5 @@
 import { Garment } from "@/components/Garment";
+import { asset } from "@/lib/paths";
 import type { Product } from "@/lib/types";
 
 /** Real photo when available, otherwise the labelled illustration. */
@@ -20,7 +21,7 @@ export function ProductVisual({
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={img.src}
+        src={asset(img.src)}
         alt={img.alt}
         width={img.width ?? 1000}
         height={img.height ?? 1250}

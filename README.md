@@ -19,6 +19,12 @@ La carpeta `out/` tiene el sitio listo en HTML, CSS y JavaScript: se puede subir
 (Netlify, Cloudflare Pages, Hostinger, etc.) y abrir `index.html` desde la raíz del dominio.
 Después de cambiar precios o productos, volvé a generarla con `npm run build`.
 
+## Publicación automática en GitHub Pages
+
+`.github/workflows/pages.yml` genera y publica el sitio en cada push a `main`, en
+`https://antoniobouso.github.io/antoniobouso-atok/`. Requisito (una sola vez):
+**Settings → Pages → Build and deployment → Source: "GitHub Actions"**.
+
 ## Dónde se cambia cada cosa
 
 | Qué | Archivo |
