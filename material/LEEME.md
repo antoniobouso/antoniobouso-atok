@@ -8,7 +8,7 @@ Subí acá todo lo que tengas para el sitio. Desde GitHub: entrá a la carpeta q
 | `stock/` | La planilla de stock, descargada como CSV o Excel | `stock.csv`, `stock.xlsx` |
 | `fotos-productos/` | Fotos de las prendas, una carpeta por producto | `boca-2024-titular/frente.jpg`, `boca-2024-titular/espalda.jpg` |
 | `logo/` | Logo de ATOK en la mejor calidad que tengas | `logo.svg`, `logo.png` |
-| `campañas/` | Fotos de campaña, de gente usando las camisetas, banners | `campaña-invierno-01.jpg` |
+| `campanas/` | Fotos de campaña, de gente usando las camisetas, banners | `campaña-invierno-01.jpg` |
 | `otros/` | Cualquier otra cosa (tabla de talles, textos, ideas) | `talles.png`, `notas.txt` |
 
 ## Para que las fotos queden bien
