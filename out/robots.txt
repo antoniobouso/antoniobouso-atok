@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /pedido/
+
+Sitemap: https://atok.com.ar/sitemap.xml

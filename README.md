@@ -13,6 +13,12 @@ npm test             # tests unitarios (precios, mensajes, estados de stock)
 npm run test:e2e     # recorrido completo + accesibilidad (requiere npm start corriendo)
 ```
 
+## Sitio ya generado (`out/`)
+
+La carpeta `out/` tiene el sitio listo en HTML, CSS y JavaScript: se puede subir tal cual a cualquier hosting
+(Netlify, Cloudflare Pages, Hostinger, etc.) y abrir `index.html` desde la raíz del dominio.
+Después de cambiar precios o productos, volvé a generarla con `npm run build`.
+
 ## Dónde se cambia cada cosa
 
 | Qué | Archivo |
