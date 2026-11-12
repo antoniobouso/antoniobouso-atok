@@ -31,5 +31,14 @@ window.CREDITS={
  "sueca69": "Carlos Delgado (CC BY-SA 4.0)",
  "sueca10": "Carlos Delgado (CC BY-SA 4.0)",
  "sueca54": "Carlos Delgado (CC BY-SA 4.0)",
- "sueca56": "Carlos Delgado (CC BY-SA 4.0)"
+ "sueca56": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca15": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca32": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca35": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca47": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca55": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca61": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca63": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca64": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca68": "Carlos Delgado (CC BY-SA 4.0)"
 };
