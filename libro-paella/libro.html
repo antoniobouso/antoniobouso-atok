@@ -3,126 +3,92 @@
 <head>
 <meta charset="utf-8">
 <title>La Paella — Agostina Lucas Magenta</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500;1,700&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,500;1,700&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 @page { size: 297mm 210mm; margin: 0; }
-:root{
-  --cream:#FAF5EA; --paper:#FFFDF8; --ink:#231E19; --soft:#6B6258;
-  --saffron:#E3A51B; --pim:#B23A1E; --olive:#5C6E3A; --line:#D9CDB6; --dark:#211C18;
-}
+:root{ --ink:#161616; --soft:#77726b; --line:#d8d4cc; --navy:#1E2A5A; --red:#C8372A; }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#888}
-body{font-family:'Lora',Georgia,serif;color:var(--ink);font-size:10.6pt;line-height:1.55;counter-reset:pg}
-.page{width:297mm;height:210mm;background:var(--cream);position:relative;overflow:hidden;
-  page-break-after:always;break-after:page;counter-increment:pg;padding:22mm 20mm 20mm}
+body{font-family:'Lora',Georgia,serif;color:var(--ink);font-size:10pt;line-height:1.52;counter-reset:pg}
+.page{width:297mm;height:210mm;background:#fff;position:relative;overflow:hidden;
+  page-break-after:always;break-after:page;counter-increment:pg}
 .page:last-child{page-break-after:auto;break-after:auto}
-.run{position:absolute;top:10mm;left:20mm;right:20mm;display:flex;justify-content:space-between;
-  font:600 6.8pt 'Montserrat',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);
-  border-bottom:.3mm solid var(--line);padding-bottom:2.4mm}
-.run b{color:var(--pim);font-weight:700}
-.folio{position:absolute;bottom:9mm;left:20mm;right:20mm;display:flex;justify-content:space-between;
-  font:600 6.8pt 'Montserrat',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
-.folio::after{content:counter(pg);font:italic 700 11pt 'Playfair Display',serif;letter-spacing:0;color:var(--ink)}
-.kicker{font:700 7.4pt 'Montserrat',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--pim);margin-bottom:3mm}
-h1{font:italic 500 40pt/1.02 'Playfair Display',serif;letter-spacing:-.01em;margin-bottom:5mm}
-h2{font:italic 500 17pt/1.15 'Playfair Display',serif;margin-bottom:2.5mm}
-h3{font:700 7.6pt 'Montserrat',sans-serif;letter-spacing:.2em;text-transform:uppercase;margin-bottom:2mm}
-.lead{font:italic 600 11.6pt/1.45 'Lora',serif;margin-bottom:5mm}
-p{margin-bottom:3.2mm;text-align:justify;hyphens:auto}
-.cols2{column-count:2;column-gap:8mm}
-.cols2 p{break-inside:avoid-column}
-.dropcap::first-letter{font:italic 700 34pt/0.8 'Playfair Display',serif;float:left;padding:1.6mm 2mm 0 0;color:var(--pim)}
-.split{display:grid;gap:12mm;height:100%}
-.rule{width:18mm;height:.8mm;background:var(--saffron);margin:0 0 5mm}
-.box{background:var(--paper);border:.3mm solid var(--line);padding:5mm 6mm;border-radius:1.2mm}
-.box p:last-child{margin-bottom:0}
-.note{border-left:1mm solid var(--saffron);padding:1mm 0 1mm 5mm}
-.note p{text-align:left}
-small,.sm{font-size:9pt;line-height:1.45}
-.art{position:absolute}
-.ph{position:absolute;overflow:hidden}
-img.f{width:100%;height:100%;object-fit:cover;display:block}
-.cap{font:500 6.3pt 'Montserrat',sans-serif;letter-spacing:.06em;color:var(--soft);margin-top:1.5mm}
-.art svg{width:100%;height:100%;display:block}
+
+/* doble página estilo revista: foto a la izquierda, texto a la derecha */
+.sp{display:grid;grid-template-columns:var(--pw,148.5mm) 1fr}
+.pic{height:210mm;overflow:hidden;position:relative}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.pic.g4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1.2mm;background:#fff}
+.pic.g4 img{min-height:0}
+.tx{position:relative;height:210mm;padding:13mm 17mm 17mm 18mm;display:flex;flex-direction:column}
+.hd{text-align:right;font:700 5.8pt/1.5 'Montserrat',sans-serif;letter-spacing:.04em}
+.hd span{display:block;font-weight:400;color:var(--soft)}
+.pn{position:absolute;right:17mm;bottom:9mm;font:700 7pt 'Montserrat',sans-serif}
+.pn::after{content:counter(pg)}
+h1{font:italic 500 35pt/1.06 'Playfair Display',serif;text-align:center;margin:9mm 0 8mm;letter-spacing:-.005em}
+h1.s{font-size:28pt;margin:6mm 0 6mm}
+.lead{font:italic 700 10.6pt/1.42 'Lora',serif;margin-bottom:6mm;text-align:justify}
+.body{display:grid;grid-template-columns:25mm 1fr;gap:5mm}
+.side{font:700 7.4pt/1.45 'Lora',serif}
+.side b{display:block;font:700 5.8pt 'Montserrat',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:1.2mm}
+.side div+div{margin-top:5mm}
+.cols{column-count:2;column-gap:5mm}
+p{text-align:justify;hyphens:auto}
+.cols p+p,.one p+p{text-indent:4mm}
+h3{font:700 5.9pt 'Montserrat',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);margin-bottom:1.4mm}
+h2{font:italic 700 11pt/1.2 'Playfair Display',serif;margin-bottom:.6mm}
+.strip{display:grid;border-top:.35mm solid var(--ink);margin-top:auto}
+.strip div{padding:2mm 2.5mm 0 0;font-size:7.5pt;line-height:1.35}
+.strip b{display:block;font:italic 700 8.6pt 'Playfair Display',serif}
 table{border-collapse:collapse;width:100%}
-td,th{padding:1.7mm 2mm;border-bottom:.25mm solid var(--line);text-align:left;font-size:9.4pt;vertical-align:top}
-th{font:700 6.8pt 'Montserrat',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--pim)}
-td.q{white-space:nowrap;font-weight:600;text-align:right;color:var(--pim)}
-
-/* cover */
-.cover{background:var(--paper);padding:0}
-.cover .txt{position:absolute;right:20mm;top:0;bottom:0;width:128mm;display:flex;flex-direction:column;justify-content:center}
-.cover .t{font:italic 500 92pt/.92 'Playfair Display',serif;letter-spacing:-.02em;margin:5mm 0 8mm}
-.cover .t span{color:var(--pim)}
-.cover .sub{font:italic 600 13pt/1.45 'Lora',serif;max-width:112mm}
-.cover .who{position:absolute;right:20mm;bottom:17mm;width:128mm;border-top:.3mm solid var(--ink);padding-top:4mm;
-  display:flex;justify-content:space-between;align-items:flex-end}
-.cover .who b{font:italic 500 17pt 'Playfair Display',serif;display:block}
-.lab{font:600 7pt 'Montserrat',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--soft)}
-.cover .top{position:absolute;right:20mm;top:17mm;width:128mm;display:flex;justify-content:space-between}
-
-.folio{z-index:2;align-items:center}
-.folio.chip::after{background:var(--cream);border-radius:50%;width:9mm;height:9mm;display:flex;align-items:center;justify-content:center;margin:-3mm -2mm -3mm 0}
-.dark{background:var(--dark);color:#F3EADB}
-.dark .run,.dark .folio{color:#A99C8A;border-color:#4a4038}
-.dark .folio::after{color:#F3EADB}
-.dark .kicker{color:var(--saffron)}
-.dark .box{background:#2c2520;border-color:#4a4038}
-
-.grid{display:grid;gap:4mm}
-.card{background:var(--paper);border:.3mm solid var(--line);border-radius:1.2mm;padding:4mm 4.5mm}
-.card p{font-size:9.2pt;line-height:1.42;text-align:left;margin:0;hyphens:manual}
-.card h3{margin-bottom:1.2mm}
-.dot{width:7mm;height:7mm;border-radius:50%;margin-bottom:2mm;border:.3mm solid rgba(0,0,0,.15)}
-.num{font:italic 700 22pt/1 'Playfair Display',serif;color:var(--saffron);margin-bottom:1.5mm}
-.stats{display:grid;grid-template-columns:repeat(5,1fr);border-top:.4mm solid var(--ink);border-bottom:.4mm solid var(--ink);margin-bottom:6mm}
-.stats div{padding:3mm 0 3mm 4mm;border-left:.25mm solid var(--line)}
+td,th{padding:1.15mm 0;border-bottom:.2mm solid var(--line);text-align:left;font-size:9.1pt;vertical-align:top}
+th{font:700 5.8pt 'Montserrat',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);padding-right:4mm;white-space:nowrap}
+td.q{text-align:right;font-weight:700;white-space:nowrap;padding-left:3mm}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);border-top:.35mm solid var(--ink);border-bottom:.35mm solid var(--ink);margin-bottom:5mm}
+.stats div{padding:2mm 0 2mm 3mm;border-left:.2mm solid var(--line);font:600 5.6pt 'Montserrat',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
 .stats div:first-child{border-left:0;padding-left:0}
-.stats b{display:block;font:italic 500 15pt 'Playfair Display',serif}
+.stats b{display:block;font:italic 500 12.5pt 'Playfair Display',serif;letter-spacing:0;text-transform:none;color:var(--ink)}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:3.2mm 7mm}
+.steps div{display:grid;grid-template-columns:8mm 1fr;font-size:9.3pt;line-height:1.42}
+.steps i{font:italic 700 17pt/1 'Playfair Display',serif;color:var(--navy)}
+.steps b{font:700 5.9pt 'Montserrat',sans-serif;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:.4mm}
 .toc{list-style:none}
-.toc li{display:flex;align-items:baseline;gap:3mm;padding:1.75mm 0;border-bottom:.25mm dotted #b9ab90;font-size:10.6pt}
-.toc li i{font:italic 700 10pt 'Playfair Display',serif;color:var(--pim);width:8mm}
+.toc li{display:flex;align-items:baseline;gap:3mm;padding:1.55mm 0;border-bottom:.2mm solid var(--line);font-size:9.4pt}
+.toc li i{font:italic 700 8.6pt 'Playfair Display',serif;color:var(--navy);width:7mm}
 .toc li span{flex:1}
-.toc li b{font:italic 700 11pt 'Playfair Display',serif}
-.quote{font:italic 500 21pt/1.25 'Playfair Display',serif}
-.tl{display:grid;grid-template-columns:repeat(5,1fr);border-top:.5mm solid var(--ink);margin-top:4mm}
-.tl div{padding:3.5mm 4mm 0 0;position:relative}
-.tl div::before{content:"";position:absolute;top:-1.6mm;left:0;width:2.7mm;height:2.7mm;border-radius:50%;background:var(--pim)}
-.tl b{font:italic 700 12pt 'Playfair Display',serif;display:block;margin-bottom:1mm}
-.tl span{font-size:8.7pt;line-height:1.38;display:block}
-dl dt{font:italic 700 11pt 'Playfair Display',serif;color:var(--pim)}
-dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
-.bib li{margin:0 0 4mm 6mm;text-indent:-6mm;list-style:none;font-size:10.4pt}
+.toc li b{font:700 7pt 'Montserrat',sans-serif}
+dl dt{font:italic 700 9.4pt 'Playfair Display',serif}
+dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
+.sm{font-size:8.7pt;line-height:1.42}
+.lab{font:600 6.6pt 'Montserrat',sans-serif;letter-spacing:.22em;text-transform:uppercase}
+
+/* portada tipo póster */
+.cover .title{position:absolute;left:0;right:0;top:15mm;text-align:center;font:800 62pt/1 'Playfair Display',serif;letter-spacing:.07em;color:var(--navy);transform:scaleX(.86)}
+.cover .subt{position:absolute;left:0;right:0;top:42.5mm;text-align:center;font:italic 400 10.5pt 'Lora',serif;color:var(--navy)}
+.cover .art{position:absolute;left:0;right:0;top:49mm;height:136mm}
+.cover .art svg{width:100%;height:100%}
+.cover .foot{position:absolute;left:22mm;right:22mm;bottom:13mm;display:flex;justify-content:space-between;color:var(--navy)}
+.cover .foot span{font:700 8.4pt 'Montserrat',sans-serif;letter-spacing:.16em;text-transform:uppercase}
 </style>
+<script src="credits.js"></script>
 </head>
 <body>
 
 <!-- 1 PORTADA -->
 <section class="page cover">
-  <div style="position:absolute;left:0;top:0;bottom:0;width:16mm;background:var(--pim)"></div>
-  <div style="position:absolute;left:16mm;top:0;bottom:0;width:3mm;background:var(--saffron)"></div>
-  <div style="position:absolute;left:31mm;right:12mm;top:12mm;bottom:12mm;border:.35mm solid var(--ink)"></div>
-  <div style="position:absolute;left:33mm;right:14mm;top:14mm;bottom:14mm;border:.2mm solid var(--line)"></div>
-  <div style="position:absolute;left:46mm;right:27mm;top:25mm;display:flex;justify-content:space-between"><span class="lab">Monografía</span><span class="lab">Gastronomía española</span></div>
-  <div style="position:absolute;left:46mm;right:27mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
-    <div class="kicker" style="margin-bottom:6mm">Cocina y Pastelería</div>
-    <div style="font:italic 500 118pt/.95 'Playfair Display',serif;letter-spacing:-.02em">La <span style="color:var(--pim)">Paella</span></div>
-    <div class="rule" style="margin:9mm auto 8mm;width:26mm"></div>
-    <div style="font:italic 600 14pt/1.45 'Lora',serif;max-width:150mm">Historia, origen, elaboración e importancia<br>en la gastronomía española</div>
-  </div>
-  <div style="position:absolute;left:46mm;right:27mm;bottom:25mm;display:flex;justify-content:space-between;align-items:flex-end">
-    <div><span class="lab">Autora</span><b style="font:italic 500 18pt 'Playfair Display',serif;display:block">Agostina Lucas Magenta</b></div>
-    <span class="lab">1.º A · 2026</span>
-  </div>
+  <div class="title">PAELLA</div>
+  <div class="subt">Historia, origen, elaboración e importancia en la gastronomía española</div>
+  <div class="art" id="coverart"></div>
+  <div class="foot"><span>Cocina y Pastelería · 1.º A</span><span>Agostina Lucas Magenta | 2026</span></div>
 </section>
 
 <!-- 2 PORTADILLA -->
 <section class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-  <div class="kicker">Monografía</div>
-  <div style="font:italic 500 54pt/1 'Playfair Display',serif;margin-bottom:5mm">La Paella</div>
-  <div class="rule" style="margin:0 auto 6mm"></div>
-  <div class="lead" style="max-width:150mm;margin-bottom:14mm">Historia, origen, elaboración e importancia<br>en la gastronomía española</div>
-  <table style="width:120mm">
+  <div class="lab" style="color:var(--navy);margin-bottom:6mm">Monografía</div>
+  <div style="font:italic 500 50pt/1 'Playfair Display',serif;margin-bottom:6mm">La Paella</div>
+  <div style="width:18mm;height:.5mm;background:var(--ink);margin-bottom:6mm"></div>
+  <div style="font:italic 700 11pt/1.45 'Lora',serif;margin-bottom:14mm">Historia, origen, elaboración e importancia<br>en la gastronomía española</div>
+  <table style="width:104mm">
     <tr><th>Alumna</th><td>Agostina Lucas Magenta</td></tr>
     <tr><th>Curso</th><td>1.º A</td></tr>
     <tr><th>Materia</th><td>Cocina y Pastelería</td></tr>
@@ -132,512 +98,411 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
 </section>
 
 <!-- 3 ÍNDICE -->
-<section class="page">
-  <div class="run"><span><b>La Paella</b></span><span>Índice</span></div>
-  <div class="split" style="grid-template-columns:150mm 1fr">
-    <div>
-      <div class="kicker">Contenido</div>
-      <h1>Índice</h1>
-      <ul class="toc" id="toc"></ul>
-    </div>
-    <div style="display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:6mm">
-      <div class="quote" style="margin-bottom:5mm">“La gastronomía no consiste solamente en preparar alimentos, sino también en conservar tradiciones.”</div>
-      <div class="lab">De la conclusión de este trabajo</div>
-    </div>
+<section class="page sp">
+  <div class="pic"><img src="img/tradicional.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Contenido</span></div>
+    <h1>Índice</h1>
+    <ul class="toc" id="toc"></ul>
+    <div class="pn"></div>
   </div>
-  <div class="folio"><span>Agostina Lucas Magenta</span></div>
 </section>
 
 <!-- 4 INTRODUCCIÓN -->
-<section class="page" data-toc="Introducción">
-  <div class="run"><span><b>La Paella</b></span><span>Introducción</span></div>
-  <div class="split" style="grid-template-columns:1fr 104mm">
-    <div>
-      <div class="kicker">Introducción</div>
-      <h1>Un plato que<br>cuenta una cultura</h1>
-      <div class="rule"></div>
-      <p class="lead">La paella es uno de los platos más representativos de la gastronomía española y uno de los más reconocidos a nivel internacional.</p>
-      <div class="cols2">
-        <p class="dropcap">Su ingrediente principal es el arroz, que se cocina junto con diferentes carnes, verduras, pescados o mariscos, dependiendo de la variedad que se prepare.</p>
+<section class="page sp" data-toc="Introducción">
+  <div class="pic"><img src="img/hero.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Introducción</span></div>
+    <h1>Un plato que<br>cuenta una cultura</h1>
+    <p class="lead">La paella es uno de los platos más representativos de la gastronomía española y uno de los más reconocidos a nivel internacional.</p>
+    <div class="body">
+      <div class="side">
+        <div><b>Origen</b>Comunidad Valenciana, España.</div>
+        <div><b>Base</b>El arroz.</div>
+        <div><b>Recipiente</b>La paella: sartén amplia, baja y con dos asas.</div>
+        <div><b>Sello</b>El socarrat.</div>
+      </div>
+      <div class="cols">
+        <p>Su ingrediente principal es el arroz, que se cocina junto con diferentes carnes, verduras, pescados o mariscos, dependiendo de la variedad que se prepare.</p>
         <p>Esta preparación tiene su origen en la Comunidad Valenciana, en el este de España, donde el cultivo del arroz tuvo un papel fundamental en el desarrollo de su gastronomía.</p>
-        <p>La paella no es solamente una comida tradicional, sino también una expresión de la cultura y las costumbres españolas. Su elaboración permite conocer diferentes técnicas culinarias, la importancia de los ingredientes y el comportamiento del arroz durante la cocción.</p>
+        <p>La paella no es solamente una comida tradicional, sino también una expresión de la cultura y las costumbres españolas.</p>
+        <p>Su elaboración permite conocer diferentes técnicas culinarias, la importancia de los ingredientes y el comportamiento del arroz durante la cocción.</p>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;justify-content:flex-end">
-      <div class="box">
-        <h3 style="color:var(--pim)">La paella en pocas palabras</h3>
-        <table>
-          <tr><th>Origen</th><td>Comunidad Valenciana, España</td></tr>
-          <tr><th>Base</th><td>Arroz</td></tr>
-          <tr><th>Recipiente</th><td>Paella: sartén amplia, baja y con dos asas</td></tr>
-          <tr><th>Técnica</th><td>Cocción por absorción</td></tr>
-          <tr><th>Sello</th><td style="border-bottom:0">El socarrat</td></tr>
-        </table>
-      </div>
-    </div>
+    <div class="pn"></div>
   </div>
-  <div class="ph" style="right:0;top:0;width:124mm;height:122mm"><img class="f" src="img/hero.jpg"></div>
-  <div class="folio"><span>Introducción</span></div>
 </section>
 
 <!-- 5 ORIGEN E HISTORIA -->
-<section class="page" data-toc="Origen e historia">
-  <div class="run"><span><b>La Paella</b></span><span>Origen e historia</span></div>
-  <div class="split" style="grid-template-columns:86mm 1fr;height:auto">
-    <div>
-      <div class="kicker">Origen e historia</div>
-      <h1>De la Albufera<br>al mundo</h1>
-      <div class="rule"></div>
-      <img class="f" src="img/albufera.jpg" style="height:30mm"><div class="cap" style="margin-bottom:4mm">Barca tradicional en la Albufera de Valencia.</div>
-      <div class="note"><h3 style="color:var(--pim)">¿De dónde viene el nombre?</h3>
-      <p class="sm">«Paella» es la palabra valenciana para «sartén» y proviene del latín <i>patella</i>. El plato tomó el nombre del recipiente en el que se cocina.</p></div>
+<section class="page sp" data-toc="Origen e historia">
+  <div class="pic"><img src="img/albufera.jpg" style="object-position:62% 50%"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Origen e historia</span></div>
+    <h1>De la Albufera<br>al mundo</h1>
+    <p class="lead">La paella nació en las zonas rurales de Valencia, especialmente en los alrededores de la Albufera, una región caracterizada por sus lagunas y extensos campos de arroz.</p>
+    <div class="body">
+      <div class="side"><div><b>El nombre</b>«Paella» es la palabra valenciana para «sartén» y proviene del latín <i>patella</i>. El plato tomó el nombre del recipiente en el que se cocina.</div></div>
+      <div class="cols">
+        <p>Originalmente era una comida preparada por campesinos y trabajadores rurales, quienes utilizaban los ingredientes que tenían disponibles. Se trataba de una preparación sencilla, nutritiva y abundante, que podía compartirse entre varias personas.</p>
+        <p>Con el paso del tiempo, el arroz se convirtió en el ingrediente principal y comenzó a combinarse con carnes como el pollo y el conejo, además de verduras y especias.</p>
+        <p>Durante el siglo XIX, la paella comenzó a popularizarse en diferentes sectores de la sociedad española, convirtiéndose en una preparación habitual en reuniones familiares y celebraciones.</p>
+        <p>Actualmente, es considerada un símbolo de la identidad gastronómica de Valencia y de España.</p>
+      </div>
     </div>
-    <div class="cols2" style="padding-top:8mm">
-      <p class="dropcap">La paella nació en las zonas rurales de Valencia, especialmente en los alrededores de la Albufera, una región caracterizada por sus lagunas y extensos campos de arroz.</p>
-      <p>Originalmente era una comida preparada por campesinos y trabajadores rurales, quienes utilizaban los ingredientes que tenían disponibles. Se trataba de una preparación sencilla, nutritiva y abundante, que podía compartirse entre varias personas.</p>
-      <p>Con el paso del tiempo, el arroz se convirtió en el ingrediente principal y comenzó a combinarse con carnes como el pollo y el conejo, además de verduras y especias.</p>
-      <p>Durante el siglo XIX, la paella comenzó a popularizarse en diferentes sectores de la sociedad española, convirtiéndose en una preparación habitual en reuniones familiares y celebraciones.</p>
-      <p>Actualmente, es considerada un símbolo de la identidad gastronómica de Valencia y de España.</p>
+    <div class="strip" style="grid-template-columns:repeat(4,1fr);margin-bottom:6mm">
+      <div><b>Origen rural</b>Comida de campesinos en torno a la Albufera.</div>
+      <div><b>Siglo XIX</b>Se populariza en toda la sociedad española.</div>
+      <div><b>Siglo XX</b>El turismo la difunde por el mundo.</div>
+      <div><b>2021</b>Declarada Bien de Interés Cultural inmaterial.</div>
     </div>
+    <div class="pn"></div>
   </div>
-  <div style="position:absolute;left:20mm;right:20mm;bottom:24mm">
-    <h3 style="color:var(--pim)">Línea de tiempo</h3>
-    <div class="tl">
-      <div><b>Época andalusí</b><span>El cultivo del arroz se extiende por las tierras húmedas de Valencia.</span></div>
-      <div><b>Origen rural</b><span>Campesinos de la Albufera cocinan arroz con lo que tienen a mano.</span></div>
-      <div><b>Siglo XIX</b><span>La paella se populariza en toda la sociedad española.</span></div>
-      <div><b>Siglo XX</b><span>El turismo la difunde y se vuelve un plato internacional.</span></div>
-      <div><b>2021</b><span>La Generalitat Valenciana la declara Bien de Interés Cultural inmaterial.</span></div>
-    </div>
-  </div>
-  <div class="folio"><span>Origen e historia</span></div>
 </section>
 
 <!-- 6 INGREDIENTES -->
-<section class="page" data-toc="Ingredientes principales">
-  <div class="run"><span><b>La Paella</b></span><span>Ingredientes principales</span></div>
-  <div class="split" style="grid-template-columns:80mm 1fr">
-    <div>
-      <div class="kicker">Ingredientes principales</div>
-      <h1>Los diez de<br>la receta<br>valenciana</h1>
-      <div class="rule"></div>
-      <p>La paella tradicional valenciana se caracteriza por utilizar ingredientes propios de la región.</p>
-      <p>El arroz es el ingrediente fundamental, ya que absorbe los sabores del resto de los alimentos durante la cocción. El pollo y el conejo aportan proteínas y sabor, mientras que las verduras incorporan diferentes texturas y aromas.</p>
-      <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:2mm">
-        <div><img class="f" src="img/arroz.jpg" style="height:30mm"><div class="cap">Arroz bomba.</div></div>
-        <div><img class="f" src="img/garrofo.jpg" style="height:30mm"><div class="cap">Garrofó: vainas y semillas.</div></div>
+<section class="page sp" data-toc="Ingredientes principales">
+  <div class="pic"><img src="img/arroz.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Ingredientes principales</span></div>
+    <h1>Los ingredientes<br>de la huerta</h1>
+    <p class="lead">La paella tradicional valenciana se caracteriza por utilizar ingredientes propios de la región: arroz, pollo, conejo, judías verdes, garrofó, tomate, aceite de oliva, azafrán, pimentón y agua.</p>
+    <div class="body">
+      <div class="side">
+        <div><b>Arroz bomba</b>Una de las variedades más utilizadas: tiene buena capacidad de absorción y mantiene relativamente bien su forma.</div>
+        <div><b>Garrofó</b>Poroto blanco, grande y plano, propio de Valencia.</div>
+      </div>
+      <div class="cols">
+        <p>El arroz es el ingrediente fundamental, ya que absorbe los sabores del resto de los alimentos durante la cocción.</p>
+        <p>El pollo y el conejo aportan proteínas y sabor, mientras que las verduras incorporan diferentes texturas y aromas.</p>
+        <p>El azafrán cumple una función importante porque aporta el color amarillo característico y un aroma particular.</p>
+        <p>El aceite de oliva se utiliza para dorar los ingredientes y desarrollar sus sabores.</p>
+        <p>El tomate, rallado, es la base del sofrito, y el pimentón dulce suma color. El agua, al hervir con las carnes y las verduras, se transforma en el caldo que el arroz absorberá.</p>
       </div>
     </div>
-    <div class="grid" style="grid-template-columns:repeat(5,1fr);align-content:center">
-      <div class="card"><div class="dot" style="background:#F6EFD9"></div><h3>Arroz</h3><p>El protagonista. La variedad bomba absorbe mucho líquido y mantiene su forma.</p></div>
-      <div class="card"><div class="dot" style="background:#C98A4B"></div><h3>Pollo</h3><p>Aporta proteínas y sabor al fondo de cocción.</p></div>
-      <div class="card"><div class="dot" style="background:#A8643A"></div><h3>Conejo</h3><p>Carne magra y sabrosa, típica de la huerta.</p></div>
-      <div class="card"><div class="dot" style="background:#5E8A3A"></div><h3>Judías verdes</h3><p>Chauchas planas que suman textura y frescura.</p></div>
-      <div class="card"><div class="dot" style="background:#EDE3C4"></div><h3>Garrofó</h3><p>Poroto blanco, grande y plano, propio de Valencia.</p></div>
-      <div class="card"><div class="dot" style="background:#C8372A"></div><h3>Tomate</h3><p>Rallado, es la base del sofrito.</p></div>
-      <div class="card"><div class="dot" style="background:#A9A232"></div><h3>Aceite de oliva</h3><p>Se usa para dorar los ingredientes y desarrollar sus sabores.</p></div>
-      <div class="card"><div class="dot" style="background:#E3A51B"></div><h3>Azafrán</h3><p>Da el color amarillo característico y un aroma particular.</p></div>
-      <div class="card"><div class="dot" style="background:#B23A1E"></div><h3>Pimentón</h3><p>Dulce; suma color y un fondo ahumado.</p></div>
-      <div class="card"><div class="dot" style="background:#BFD9E3"></div><h3>Agua</h3><p>Se transforma en caldo al hervir con carnes y verduras.</p></div>
-    </div>
+    <div class="pn"></div>
   </div>
-  <div class="folio"><span>Ingredientes principales</span></div>
 </section>
 
 <!-- 7 RECIPIENTE Y TÉCNICAS -->
-<section class="page" data-toc="El recipiente y las técnicas de elaboración">
-  <div class="run"><span><b>La Paella</b></span><span>El recipiente y las técnicas</span></div>
-  <div class="split" style="grid-template-columns:1fr 112mm">
-    <div>
-      <div class="kicker">El recipiente y las técnicas de elaboración</div>
-      <h1>La sartén que<br>le dio nombre</h1>
-      <div class="rule"></div>
-      <div class="cols2">
-        <p>La paella recibe su nombre del recipiente donde se prepara. Se trata de una sartén metálica, amplia y poco profunda, que generalmente tiene dos asas laterales.</p>
+<section class="page sp" data-toc="El recipiente y las técnicas de elaboración">
+  <div class="pic"><img src="img/paelleras.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>El recipiente y las técnicas</span></div>
+    <h1>La sartén que<br>le dio nombre</h1>
+    <p class="lead">La paella recibe su nombre del recipiente donde se prepara: una sartén metálica, amplia y poco profunda, que generalmente tiene dos asas laterales.</p>
+    <div class="body">
+      <div class="side"><div><b>Técnicas</b>Sofrito, dorado, cocción por absorción y reposo.</div><div><b>Regla de oro</b>No revolver el arroz constantemente.</div></div>
+      <div class="cols">
         <p>Su forma permite distribuir el arroz en una capa fina y favorecer una cocción uniforme, además de facilitar la evaporación del líquido.</p>
-        <p>Primero se doran las carnes con aceite de oliva para desarrollar sus sabores. Luego se incorporan las verduras y el tomate para preparar el sofrito. Posteriormente se agrega agua y se deja hervir para obtener un líquido con sabor.</p>
+        <p>Primero se doran las carnes con aceite de oliva para desarrollar sus sabores. Luego se incorporan las verduras y el tomate para preparar el sofrito.</p>
+        <p>Posteriormente se agrega agua y se deja hervir para obtener un líquido con sabor.</p>
         <p>Finalmente se incorpora el arroz, que absorbe el líquido durante la cocción. Es importante no revolverlo constantemente, ya que se busca obtener granos cocidos y relativamente separados.</p>
       </div>
     </div>
-    <div>
-      <img class="f" src="img/paelleras.jpg" style="width:112mm;height:60mm"><div class="cap" style="margin-bottom:4mm">Paelleras de distintos diámetros a la venta en Valencia.</div>
-      <div class="grid" style="grid-template-columns:1fr 1fr">
-        <div class="card"><h3 style="color:var(--pim)">Dorado</h3><p>Sellar las carnes a fuego vivo para que tomen color y sabor.</p></div>
-        <div class="card"><h3 style="color:var(--pim)">Sofrito</h3><p>Cocinar suavemente verduras y tomate en el aceite.</p></div>
-        <div class="card"><h3 style="color:var(--pim)">Absorción</h3><p>El arroz se cuece en el caldo justo, sin escurrir ni revolver.</p></div>
-        <div class="card"><h3 style="color:var(--pim)">Reposo</h3><p>Unos minutos fuera del fuego para asentar el grano.</p></div>
-      </div>
+    <div class="strip" style="grid-template-columns:repeat(4,1fr);margin-bottom:6mm">
+      <div><b>1. Dorado</b>Sellar las carnes en aceite de oliva.</div>
+      <div><b>2. Sofrito</b>Verduras y tomate a fuego suave.</div>
+      <div><b>3. Absorción</b>El arroz se cuece en el caldo justo.</div>
+      <div><b>4. Reposo</b>Unos minutos fuera del fuego.</div>
     </div>
+    <div class="pn"></div>
   </div>
-  <div style="position:absolute;left:20mm;right:20mm;bottom:24mm">
-    <h3 style="color:var(--pim)">El orden de la elaboración</h3>
-    <div class="tl" style="grid-template-columns:repeat(6,1fr)">
-      <div><b>1. Dorado</b><span>Carnes en aceite de oliva.</span></div>
-      <div><b>2. Sofrito</b><span>Verduras y tomate.</span></div>
-      <div><b>3. Caldo</b><span>Agua que hierve y toma sabor.</span></div>
-      <div><b>4. Arroz</b><span>Cocción por absorción, sin revolver.</span></div>
-      <div><b>5. Socarrat</b><span>Tostado final del fondo.</span></div>
-      <div><b>6. Reposo</b><span>Unos minutos antes de servir.</span></div>
-    </div>
-  </div>
-  <div class="folio"><span>El recipiente y las técnicas</span></div>
 </section>
 
-<!-- 8 RECETA: FICHA -->
-<section class="page" data-toc="Receta: paella valenciana tradicional">
-  <div class="run"><span><b>La Paella</b></span><span>Receta · Ficha técnica</span></div>
-  <div class="kicker">Receta · Ficha técnica</div>
-  <h1 style="margin-bottom:5mm">Paella valenciana tradicional</h1>
-  <div class="stats">
-    <div><span class="lab">Porciones</span><b>4</b></div>
-    <div><span class="lab">Preparación</span><b>20 min</b></div>
-    <div><span class="lab">Cocción</span><b>60 min</b></div>
-    <div><span class="lab">Reposo</span><b>5 min</b></div>
-    <div><span class="lab">Dificultad</span><b>Media</b></div>
+<!-- 8 RECETA -->
+<section class="page sp" data-toc="Receta: paella valenciana tradicional" style="--pw:112mm">
+  <div class="pic"><img src="img/lena.jpg" style="object-position:55% 50%"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Receta · Ficha técnica</span></div>
+    <h1 class="s">Paella valenciana tradicional</h1>
+    <div class="stats">
+      <div>Porciones<b>4</b></div><div>Preparación<b>20 min</b></div><div>Cocción<b>60 min</b></div><div>Reposo<b>5 min</b></div><div>Dificultad<b>Media</b></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9mm">
+      <div>
+        <h3>Ingredientes</h3>
+        <table>
+          <tr><td>Arroz bomba</td><td class="q">400 g</td></tr>
+          <tr><td>Pollo troceado, con hueso</td><td class="q">500 g</td></tr>
+          <tr><td>Conejo troceado</td><td class="q">300 g</td></tr>
+          <tr><td>Judías verdes planas (chauchas)</td><td class="q">200 g</td></tr>
+          <tr><td>Garrofó (o porotos de manteca)</td><td class="q">100 g</td></tr>
+          <tr><td>Tomate maduro rallado</td><td class="q">1 grande</td></tr>
+          <tr><td>Aceite de oliva</td><td class="q">80 ml</td></tr>
+          <tr><td>Azafrán en hebras</td><td class="q">1 pizca</td></tr>
+          <tr><td>Pimentón dulce</td><td class="q">1 cdta.</td></tr>
+          <tr><td>Agua</td><td class="q">1,6 l aprox.</td></tr>
+          <tr><td>Sal</td><td class="q">c/n</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Mise en place</h3>
+        <p class="sm" style="text-align:left;margin-bottom:4mm">1. Trocear el pollo y el conejo en piezas parejas y salarlas.<br>2. Lavar las judías, quitar las puntas y cortarlas en tramos.<br>3. Rallar el tomate y descartar la piel.<br>4. Pesar el arroz. No se lava: su almidón ayuda a ligar el caldo.<br>5. Medir el agua y tener a mano azafrán, pimentón y sal.</p>
+        <h3>Utensilios</h3>
+        <p class="sm" style="text-align:left;margin-bottom:4mm">Paella de 40 cm · Fuego amplio y parejo (paellero, hornalla grande o leña) · Espumadera · Rallador · Tabla y cuchillo · Jarra medidora · Paño limpio.</p>
+        <h3>Alérgenos</h3>
+        <p class="sm" style="text-align:left">La receta no lleva gluten, lácteos ni huevo. Verificar el rotulado de las especias envasadas.</p>
+      </div>
+    </div>
+    <div class="pn"></div>
   </div>
-  <div class="split" style="grid-template-columns:104mm 1fr 1fr;height:auto;gap:10mm">
-    <div>
-      <h3 style="color:var(--pim)">Ingredientes</h3>
-      <table>
-        <tr><td>Arroz bomba</td><td class="q">400 g</td></tr>
-        <tr><td>Pollo troceado, con hueso</td><td class="q">500 g</td></tr>
-        <tr><td>Conejo troceado</td><td class="q">300 g</td></tr>
-        <tr><td>Judías verdes planas (chauchas)</td><td class="q">200 g</td></tr>
-        <tr><td>Garrofó (o porotos de manteca)</td><td class="q">100 g</td></tr>
-        <tr><td>Tomate maduro rallado</td><td class="q">1 grande</td></tr>
-        <tr><td>Aceite de oliva</td><td class="q">80 ml</td></tr>
-        <tr><td>Azafrán en hebras</td><td class="q">1 pizca</td></tr>
-        <tr><td>Pimentón dulce</td><td class="q">1 cdta.</td></tr>
-        <tr><td>Agua</td><td class="q">1,6 l aprox.</td></tr>
-        <tr><td>Sal</td><td class="q">c/n</td></tr>
-      </table>
-    </div>
-    <div>
-      <h3 style="color:var(--pim)">Utensilios</h3>
-      <p class="sm" style="text-align:left">Paella de 40 cm de diámetro · Fuego amplio y parejo (paellero, hornalla grande o leña) · Espumadera · Rallador · Tabla y cuchillo · Jarra medidora · Paño limpio para el reposo.</p>
-      <h3 style="color:var(--pim);margin-top:5mm">Alérgenos</h3>
-      <p class="sm" style="text-align:left">La receta no lleva gluten, lácteos ni huevo. Verificar siempre el rotulado de las especias envasadas.</p>
-    </div>
-    <div>
-      <h3 style="color:var(--pim)">Mise en place</h3>
-      <p class="sm" style="text-align:left">1. Trocear el pollo y el conejo en piezas parejas y salarlas.<br>2. Lavar las judías, quitar las puntas y cortarlas en tramos.<br>3. Rallar el tomate y descartar la piel.<br>4. Pesar el arroz. No se lava: su almidón ayuda a ligar el caldo.<br>5. Medir el agua y tener a mano azafrán, pimentón y sal.</p>
-    </div>
-  </div>
-  <div class="ph" style="right:20mm;bottom:22mm;width:143mm;height:60mm"><img class="f" src="img/lena.jpg" style="object-position:50% 60%"></div>
-  <div class="folio chip"><span>Receta</span></div>
 </section>
 
 <!-- 9 PASO A PASO -->
-<section class="page" data-toc="Elaboración paso a paso">
-  <div class="run"><span><b>La Paella</b></span><span>Receta · Paso a paso</span></div>
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:5mm">
-    <div><div class="kicker">Receta · Elaboración</div><h1 style="margin:0">Paso a paso</h1></div>
-    <p class="lead" style="max-width:110mm;margin:0;text-align:right">Ocho pasos, un solo recipiente y una regla de oro: una vez que entra el arroz, no se revuelve.</p>
-  </div>
-  <div class="grid" style="grid-template-columns:repeat(4,1fr)">
-    <div class="card"><div class="num">1</div><h3>Dorar</h3><p>Calentar el aceite en la paella nivelada. Dorar el pollo y el conejo a fuego medio, unos 10 minutos, hasta que estén bien dorados.</p></div>
-    <div class="card"><div class="num">2</div><h3>Verduras</h3><p>Correr la carne hacia los bordes y saltear en el centro las judías verdes y el garrofó durante 5 minutos.</p></div>
-    <div class="card"><div class="num">3</div><h3>Sofrito</h3><p>Agregar el tomate rallado y cocinar hasta que pierda el agua. Sumar el pimentón y remover unos segundos para que no se queme.</p></div>
-    <div class="card"><div class="num">4</div><h3>Caldo</h3><p>Verter el agua, añadir el azafrán y la sal. Hervir unos 20 minutos: así se forma el caldo. Probar y corregir la sal.</p></div>
-    <div class="card"><div class="num">5</div><h3>Arroz</h3><p>Incorporar el arroz, repartirlo de forma pareja en una capa fina y, desde aquí, no revolver más.</p></div>
-    <div class="card"><div class="num">6</div><h3>Cocción</h3><p>Cocinar unos 8 minutos a fuego fuerte y luego otros 8 a 10 minutos a fuego suave, hasta que el arroz absorba el caldo.</p></div>
-    <div class="card"><div class="num">7</div><h3>Socarrat</h3><p>Con el arroz ya seco, subir el fuego 1 o 2 minutos. Cuando crepita y huele a tostado, retirar de inmediato.</p></div>
-    <div class="card"><div class="num">8</div><h3>Reposo</h3><p>Dejar reposar 5 minutos fuera del fuego, cubierta con un paño limpio. Servir en la misma paella.</p></div>
-  </div>
-  <div class="note" style="margin-top:6mm"><p class="sm" style="margin:0"><b>Punto justo:</b> el arroz debe quedar cocido, suelto y seco, en una capa de no más de dos dedos de alto. Si el caldo se evapora antes de tiempo, se añade un poco de agua caliente por los bordes, sin remover.</p></div>
-  <div style="position:absolute;left:20mm;right:20mm;bottom:24mm">
-    <h3 style="color:var(--pim)">Los tiempos de la cocción</h3>
-    <div class="tl" style="grid-template-columns:10fr 8fr 20fr 18fr 6fr 8fr">
-      <div><b>0–10 min</b><span>Dorar las carnes</span></div>
-      <div><b>10–18</b><span>Verduras y sofrito</span></div>
-      <div><b>18–38 min</b><span>Hervor del caldo</span></div>
-      <div><b>38–56 min</b><span>Cocción del arroz</span></div>
-      <div><b>56–58</b><span>Socarrat</span></div>
-      <div><b>+ 5 min</b><span>Reposo</span></div>
+<section class="page sp" data-toc="Elaboración paso a paso" style="--pw:112mm">
+  <div class="pic"><img src="img/ebullicion.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Receta · Paso a paso</span></div>
+    <h1 class="s">Paso a paso</h1>
+    <p class="lead" style="text-align:center">Ocho pasos, un solo recipiente y una regla de oro: una vez que entra el arroz, no se revuelve.</p>
+    <div class="steps">
+      <div><i>1</i><span><b>Dorar</b>Calentar el aceite en la paella nivelada. Dorar el pollo y el conejo a fuego medio, unos 10 minutos, hasta que estén bien dorados.</span></div>
+      <div><i>2</i><span><b>Verduras</b>Correr la carne hacia los bordes y saltear en el centro las judías verdes y el garrofó durante 5 minutos.</span></div>
+      <div><i>3</i><span><b>Sofrito</b>Agregar el tomate rallado y cocinar hasta que pierda el agua. Sumar el pimentón y remover unos segundos para que no se queme.</span></div>
+      <div><i>4</i><span><b>Caldo</b>Verter el agua, añadir el azafrán y la sal. Hervir unos 20 minutos: así se forma el caldo. Probar y corregir la sal.</span></div>
+      <div><i>5</i><span><b>Arroz</b>Incorporar el arroz, repartirlo de forma pareja en una capa fina y, desde aquí, no revolver más.</span></div>
+      <div><i>6</i><span><b>Cocción</b>Cocinar unos 8 minutos a fuego fuerte y luego otros 8 a 10 minutos a fuego suave, hasta que el arroz absorba el caldo.</span></div>
+      <div><i>7</i><span><b>Socarrat</b>Con el arroz ya seco, subir el fuego 1 o 2 minutos. Cuando crepita y huele a tostado, retirar de inmediato.</span></div>
+      <div><i>8</i><span><b>Reposo</b>Dejar reposar 5 minutos fuera del fuego, cubierta con un paño limpio. Servir en la misma paella.</span></div>
     </div>
+    <div class="strip" style="grid-template-columns:10fr 9fr 20fr 18fr 8fr 9fr;margin-bottom:6mm">
+      <div><b>0–10 min</b>Dorar</div><div><b>10–18</b>Sofrito</div><div><b>18–38 min</b>Hervor del caldo</div><div><b>38–56 min</b>Cocción del arroz</div><div><b>56–58</b>Socarrat</div><div><b>+ 5 min</b>Reposo</div>
+    </div>
+    <div class="pn"></div>
   </div>
-  <div class="folio"><span>Receta</span></div>
 </section>
 
 <!-- 10 SOCARRAT -->
-<section class="page dark" data-toc="El socarrat">
-  <div class="run"><span><b style="color:var(--saffron)">La Paella</b></span><span>El socarrat</span></div>
-  <div class="ph" style="left:0;top:0;width:142mm;height:210mm"><img class="f" src="img/socarrat.jpg"></div>
-  <div style="position:absolute;right:20mm;top:26mm;bottom:22mm;width:112mm;display:flex;flex-direction:column;justify-content:center">
-    <div class="kicker">El socarrat</div>
+<section class="page sp" data-toc="El socarrat">
+  <div class="pic"><img src="img/socarrat.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>El socarrat</span></div>
     <h1>El tesoro<br>del fondo</h1>
-    <div class="rule"></div>
-    <p>Una de las características más apreciadas de la paella es el socarrat. Se trata de una fina capa de arroz tostado que se forma en el fondo del recipiente durante los últimos momentos de cocción.</p>
-    <p>Esta parte aporta una textura crocante y un aroma tostado muy particular. Para conseguirlo es necesario controlar correctamente la temperatura, evitando que el arroz se queme.</p>
-    <p>El socarrat es considerado por muchos especialistas una de las características que distinguen a una buena paella.</p>
-    <div class="box" style="margin-top:3mm">
-      <h3 style="color:var(--saffron)">Cómo reconocerlo</h3>
-      <p class="sm" style="text-align:left"><b>Oído:</b> el arroz empieza a crepitar. <b>Olfato:</b> aroma tostado, nunca a quemado. <b>Tacto:</b> la cuchara encuentra resistencia en el fondo.</p>
+    <p class="lead">Una de las características más apreciadas de la paella es el socarrat: una fina capa de arroz tostado que se forma en el fondo del recipiente durante los últimos momentos de cocción.</p>
+    <div class="body">
+      <div class="side">
+        <div><b>Oído</b>El arroz empieza a crepitar.</div>
+        <div><b>Olfato</b>Aroma tostado, nunca a quemado.</div>
+        <div><b>Tacto</b>La cuchara encuentra resistencia en el fondo.</div>
+      </div>
+      <div class="cols">
+        <p>Esta parte aporta una textura crocante y un aroma tostado muy particular.</p>
+        <p>Para conseguirlo es necesario controlar correctamente la temperatura, evitando que el arroz se queme.</p>
+        <p>El socarrat es considerado por muchos especialistas una de las características que distinguen a una buena paella.</p>
+      </div>
     </div>
+    <div class="pn"></div>
   </div>
-  <div class="folio"><span></span></div>
 </section>
 
 <!-- 11 VARIEDADES -->
-<section class="page" data-toc="Variedades de paella">
-  <div class="run"><span><b>La Paella</b></span><span>Variedades</span></div>
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:6mm">
-    <div><div class="kicker">Variedades de paella</div><h1 style="margin:0">Cuatro versiones,<br>una misma raíz</h1></div>
-    <p style="max-width:108mm;margin:0">Con el paso del tiempo surgieron diferentes versiones de esta preparación, adaptadas a los ingredientes y las costumbres de cada región.</p>
+<section class="page sp" data-toc="Variedades de paella">
+  <div class="pic g4"><img src="img/valenciana.jpg"><img src="img/mariscos.jpg"><img src="img/mixta.jpg"><img src="img/verduras.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Variedades</span></div>
+    <h1>Cuatro versiones,<br>una misma raíz</h1>
+    <p class="lead">Con el paso del tiempo surgieron diferentes versiones de esta preparación, adaptadas a los ingredientes y las costumbres de cada región.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5mm 8mm">
+      <div><h2>Valenciana</h2><p>Es la receta tradicional y se prepara principalmente con pollo, conejo, arroz y verduras.</p></div>
+      <div><h2>De mariscos</h2><p>Incorpora productos del mar como langostinos, mejillones, calamares y gambas, generalmente acompañados de un caldo de pescado.</p></div>
+      <div><h2>Mixta</h2><p>Combina carnes, mariscos y verduras en una misma preparación.</p></div>
+      <div><h2>De verduras</h2><p>Utiliza diferentes vegetales como alcauciles, pimientos y judías verdes.</p></div>
+    </div>
+    <p class="lead" style="margin:7mm 0 0">Estas variedades demuestran cómo una preparación tradicional puede evolucionar y adaptarse a diferentes gustos sin perder su reconocimiento gastronómico.</p>
+    <div class="pn"></div>
   </div>
-  <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:7mm">
-    <div><img class="f" src="img/valenciana.jpg" style="height:66mm;margin-bottom:3mm"><h2>Valenciana</h2><p class="sm" style="text-align:left">Es la receta tradicional y se prepara principalmente con pollo, conejo, arroz y verduras.</p></div>
-    <div><img class="f" src="img/mariscos.jpg" style="height:66mm;margin-bottom:3mm"><h2>De mariscos</h2><p class="sm" style="text-align:left">Incorpora productos del mar como langostinos, mejillones, calamares y gambas, generalmente con caldo de pescado.</p></div>
-    <div><img class="f" src="img/mixta.jpg" style="height:66mm;margin-bottom:3mm"><h2>Mixta</h2><p class="sm" style="text-align:left">Combina carnes, mariscos y verduras en una misma preparación.</p></div>
-    <div><img class="f" src="img/verduras.jpg" style="height:66mm;margin-bottom:3mm"><h2>De verduras</h2><p class="sm" style="text-align:left">Utiliza diferentes vegetales como alcauciles, pimientos y judías verdes.</p></div>
-  </div>
-  <p class="lead" style="position:absolute;left:20mm;right:20mm;bottom:21mm;margin:0;text-align:center">Estas variedades demuestran cómo una preparación tradicional puede evolucionar y adaptarse a diferentes gustos sin perder su reconocimiento gastronómico.</p>
-  <div class="folio"><span>Variedades</span></div>
 </section>
 
 <!-- 12 ORGANOLÉPTICAS -->
-<section class="page" data-toc="Características organolépticas">
-  <div class="run"><span><b>La Paella</b></span><span>Características organolépticas</span></div>
-  <div class="split" style="grid-template-columns:92mm 1fr">
-    <div>
-      <div class="kicker">Características organolépticas</div>
-      <h1>La paella<br>con los cinco<br>sentidos</h1>
-      <div class="rule"></div>
-      <p>Las características organolépticas son las propiedades de los alimentos que podemos percibir a través de los sentidos.</p>
-      <p>La presentación también es importante, ya que los ingredientes deben estar distribuidos de manera atractiva sobre el arroz.</p>
+<section class="page sp" data-toc="Características organolépticas">
+  <div class="pic"><img src="img/pato.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Características organolépticas</span></div>
+    <h1>La paella con<br>los sentidos</h1>
+    <p class="lead">Las características organolépticas son las propiedades de los alimentos que podemos percibir a través de los sentidos.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5mm 8mm">
+      <div><h3>Vista</h3><h2>Color</h2><p>Generalmente amarillo dorado, debido al azafrán.</p></div>
+      <div><h3>Olfato</h3><h2>Aroma</h2><p>Intenso, aportado por las carnes, las verduras y las especias.</p></div>
+      <div><h3>Gusto</h3><h2>Sabor</h2><p>Equilibrado; depende de la calidad de los ingredientes y del caldo utilizado.</p></div>
+      <div><h3>Tacto</h3><h2>Textura</h2><p>El arroz debe quedar cocido y suelto, las carnes tiernas y las verduras en su punto adecuado.</p></div>
     </div>
-    <div class="grid" style="grid-template-columns:1fr 1fr;align-content:center;gap:5mm">
-      <div class="card" style="padding:6mm"><div class="num">Vista</div><h3 style="color:var(--pim)">Color</h3><p>Amarillo dorado, debido al azafrán. Los ingredientes se distribuyen de forma pareja y atractiva sobre el arroz.</p></div>
-      <div class="card" style="padding:6mm"><div class="num">Olfato</div><h3 style="color:var(--pim)">Aroma</h3><p>Intenso, aportado por las carnes, las verduras y las especias, con una nota tostada del socarrat.</p></div>
-      <div class="card" style="padding:6mm"><div class="num">Gusto</div><h3 style="color:var(--pim)">Sabor</h3><p>Equilibrado. Depende de la calidad de los ingredientes y del caldo utilizado.</p></div>
-      <div class="card" style="padding:6mm"><div class="num">Tacto</div><h3 style="color:var(--pim)">Textura</h3><p>Arroz cocido y suelto, carnes tiernas y verduras en su punto adecuado.</p></div>
-      <div class="card" style="padding:6mm;grid-column:span 2"><div class="num">Oído</div><h3 style="color:var(--pim)">Sonido</h3><p>El crepitar del arroz en los últimos minutos avisa que el socarrat se está formando.</p></div>
-    </div>
+    <p style="margin-top:6mm">La presentación también es importante, ya que los ingredientes deben estar distribuidos de manera atractiva sobre el arroz.</p>
+    <div class="pn"></div>
   </div>
-  <div class="folio"><span>Características organolépticas</span></div>
 </section>
 
 <!-- 13 CONSEJOS -->
-<section class="page" data-toc="Consejos, errores frecuentes y servicio">
-  <div class="run"><span><b>La Paella</b></span><span>Consejos y servicio</span></div>
-  <div class="kicker">Consejos de cocina</div>
-  <h1>Aciertos y errores frecuentes</h1>
-  <div class="split" style="grid-template-columns:1fr 1fr 1fr;height:auto;gap:9mm">
-    <div>
-      <h2>Para que salga bien</h2>
-      <table>
-        <tr><td>Nivelar la paella antes de empezar, para que el caldo se reparta parejo.</td></tr>
-        <tr><td>Usar un fuego que abarque toda la base del recipiente.</td></tr>
-        <tr><td>Dorar bien las carnes: allí nace el sabor del caldo.</td></tr>
+<section class="page sp" data-toc="Consejos, errores frecuentes y servicio">
+  <div class="pic"><img src="img/plato.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Consejos y servicio</span></div>
+    <h1 class="s">Aciertos y errores<br>frecuentes</h1>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5mm 8mm">
+      <div><h3>Para que salga bien</h3><table>
+        <tr><td>Nivelar la paella antes de empezar.</td></tr>
+        <tr><td>Usar un fuego que abarque toda la base.</td></tr>
+        <tr><td>Dorar bien las carnes: allí nace el sabor.</td></tr>
         <tr><td>Mantener el arroz en capa fina.</td></tr>
-        <tr><td>Respetar el reposo antes de servir.</td></tr>
-      </table>
-    </div>
-    <div>
-      <h2>Lo que conviene evitar</h2>
-      <table>
-        <tr><td>Revolver el arroz durante la cocción: suelta almidón y queda pastoso.</td></tr>
-        <tr><td>Recargar la paella de ingredientes o de arroz.</td></tr>
-        <tr><td>Quemar el pimentón: amarga toda la preparación.</td></tr>
-        <tr><td>Usar un arroz que no absorba bien el caldo.</td></tr>
-        <tr><td>Pasarse con el fuego al buscar el socarrat.</td></tr>
-      </table>
-    </div>
-    <div>
-      <h2>Servicio y conservación</h2>
-      <table>
-        <tr><td>Se presenta en el mismo recipiente, en el centro de la mesa.</td></tr>
-        <tr><td>Se sirve recién hecha: el arroz sigue absorbiendo líquido y se pasa.</td></tr>
+        <tr><td>Respetar el reposo antes de servir.</td></tr></table></div>
+      <div><h3>Lo que conviene evitar</h3><table>
+        <tr><td>Revolver el arroz durante la cocción.</td></tr>
+        <tr><td>Recargar la paella de ingredientes.</td></tr>
+        <tr><td>Quemar el pimentón: amarga todo.</td></tr>
+        <tr><td>Usar un arroz que no absorba bien.</td></tr>
+        <tr><td>Pasarse de fuego al buscar el socarrat.</td></tr></table></div>
+      <div style="grid-column:span 2"><h3>Servicio y conservación</h3><table>
+        <tr><td>Se presenta en el mismo recipiente, en el centro de la mesa, y se sirve recién hecha.</td></tr>
         <tr><td>Higiene: lavarse las manos y usar tablas distintas para carnes crudas y verduras.</td></tr>
-        <tr><td>Las sobras se enfrían rápido, se refrigeran tapadas y se consumen dentro de las 24 horas, bien recalentadas.</td></tr>
-      </table>
+        <tr><td>Las sobras se enfrían rápido, se refrigeran tapadas y se consumen dentro de las 24 horas, bien recalentadas.</td></tr></table></div>
     </div>
+    <div class="pn"></div>
   </div>
-  <div class="quote" style="position:absolute;left:20mm;bottom:30mm;width:120mm">“Una vez que entra el arroz, no se revuelve.”<div class="lab" style="margin-top:4mm">La regla de oro</div></div>
-  <div class="ph" style="right:0;bottom:0;width:150mm;height:80mm"><img class="f" src="img/plato.jpg"></div>
-  <div class="folio chip"><span>Consejos y servicio</span></div>
 </section>
 
 <!-- 14 IMPORTANCIA CULTURAL -->
-<section class="page" data-toc="Importancia cultural y gastronómica">
-  <div class="run"><span><b>La Paella</b></span><span>Importancia cultural y gastronómica</span></div>
-  <div class="split" style="grid-template-columns:1fr 96mm">
-    <div style="display:flex;flex-direction:column;justify-content:center;font-size:11.2pt">
-      <div class="kicker">Importancia cultural y gastronómica</div>
-      <h1>Mucho más<br>que una comida</h1>
-      <div class="rule"></div>
-      <div class="cols2">
-        <p class="dropcap">La paella representa mucho más que una preparación culinaria. Es una tradición que forma parte de la identidad cultural valenciana y que está relacionada con las reuniones familiares, las celebraciones y los encuentros sociales.</p>
+<section class="page sp" data-toc="Importancia cultural y gastronómica">
+  <div class="pic"><img src="img/calle.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Importancia cultural y gastronómica</span></div>
+    <h1>Mucho más<br>que una comida</h1>
+    <p class="lead">La paella representa mucho más que una preparación culinaria. Es una tradición que forma parte de la identidad cultural valenciana.</p>
+    <div class="body">
+      <div class="side"><div><b>En Argentina</b>Es muy común encontrar versiones elaboradas con mariscos, calamares, mejillones y langostinos.</div></div>
+      <div class="cols">
+        <p>Está relacionada con las reuniones familiares, las celebraciones y los encuentros sociales.</p>
         <p>Su elaboración suele compartirse entre varias personas y es habitual prepararla al aire libre para disfrutarla en grupo.</p>
         <p>Con el crecimiento del turismo y la difusión de la cocina española, la paella llegó a diferentes países y comenzó a adaptarse a los ingredientes disponibles en cada lugar.</p>
         <p>Esta expansión demuestra la importancia de la gastronomía como medio de intercambio cultural.</p>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;justify-content:center;gap:8mm">
-      <div class="quote">“Una tradición ligada a las reuniones familiares, las celebraciones y los encuentros sociales.”</div>
-      <div class="box">
-        <h3 style="color:var(--pim)">La paella en Argentina</h3>
-        <p class="sm" style="text-align:left">En Argentina es muy común encontrar versiones elaboradas con mariscos, calamares, mejillones y langostinos.</p>
-        <img class="f" src="img/marisco2.jpg" style="height:46mm;margin-top:3mm">
-      </div>
-    </div>
+    <div class="pn"></div>
   </div>
-  <div class="folio"><span>Importancia cultural</span></div>
 </section>
 
 <!-- 15 CONCLUSIÓN -->
-<section class="page" data-toc="Conclusión">
-  <div class="run"><span><b>La Paella</b></span><span>Conclusión</span></div>
-  <div class="split" style="grid-template-columns:96mm 1fr">
-    <div style="display:flex;flex-direction:column;justify-content:center">
-      <div class="kicker">Conclusión</div>
-      <h1>De plato rural<br>a símbolo<br>mundial</h1>
-      <div class="rule"></div>
-      <p class="lead">Estudiar la paella permite comprender que la gastronomía también es conservar tradiciones, transmitir conocimientos y compartir experiencias a través de la comida.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;justify-content:center;font-size:11.4pt">
-      <p class="dropcap">La paella es una de las preparaciones más importantes de la gastronomía española. Su historia, sus ingredientes y sus técnicas de elaboración permiten comprender cómo un plato de origen rural puede convertirse en un símbolo cultural reconocido mundialmente.</p>
+<section class="page sp" data-toc="Conclusión">
+  <div class="pic"><img src="img/marisco2.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Conclusión</span></div>
+    <h1>De plato rural<br>a símbolo mundial</h1>
+    <p class="lead">La paella es una de las preparaciones más importantes de la gastronomía española.</p>
+    <div class="cols">
+      <p>Su historia, sus ingredientes y sus técnicas de elaboración permiten comprender cómo un plato de origen rural puede convertirse en un símbolo cultural reconocido mundialmente.</p>
       <p>Desde el punto de vista gastronómico, su preparación requiere conocimientos sobre el arroz, las materias primas, las técnicas de cocción y el control de temperatura.</p>
       <p>Además, sus diferentes variedades demuestran la capacidad de la cocina para evolucionar y adaptarse a distintas culturas y preferencias.</p>
       <p>En conclusión, estudiar la paella permite comprender que la gastronomía no consiste solamente en preparar alimentos, sino también en conservar tradiciones, transmitir conocimientos y compartir experiencias a través de la comida.</p>
     </div>
+    <div class="pn"></div>
   </div>
-  <div class="folio"><span>Conclusión</span></div>
 </section>
 
 <!-- 16 GLOSARIO -->
-<section class="page" data-toc="Glosario y equivalencias">
-  <div class="run"><span><b>La Paella</b></span><span>Glosario y equivalencias</span></div>
-  <div class="split" style="grid-template-columns:1fr 92mm">
-    <div>
-      <div class="kicker">Glosario</div>
-      <h1 style="margin-bottom:5mm">Palabras de la paella</h1>
-      <dl class="cols2">
-        <dt>Albufera</dt><dd>Laguna costera cercana a Valencia, rodeada de arrozales.</dd>
-        <dt>Arroz bomba</dt><dd>Variedad de grano corto que absorbe mucho líquido sin romperse.</dd>
-        <dt>Azafrán</dt><dd>Especia obtenida de los estigmas de una flor; da color amarillo y aroma.</dd>
-        <dt>Cocción por absorción</dt><dd>Método en el que el arroz absorbe todo el líquido de cocción.</dd>
-        <dt>Garrofó</dt><dd>Poroto blanco, grande y plano, típico de la huerta valenciana.</dd>
-        <dt>Judías verdes</dt><dd>Nombre español de las chauchas.</dd>
-        <dt>Mise en place</dt><dd>Preparación y orden de todos los ingredientes antes de cocinar.</dd>
-        <dt>Organoléptico</dt><dd>Que puede percibirse por los sentidos: color, aroma, sabor, textura.</dd>
-        <dt>Paella</dt><dd>Sartén amplia, baja y con dos asas; por extensión, el plato.</dd>
-        <dt>Pimentón</dt><dd>Pimiento rojo seco y molido.</dd>
-        <dt>Socarrat</dt><dd>Capa de arroz tostado que se forma en el fondo de la paella.</dd>
-        <dt>Sofrito</dt><dd>Base de verduras cocidas lentamente en aceite.</dd>
-      </dl>
+<section class="page sp" data-toc="Glosario y equivalencias" style="--pw:112mm">
+  <div class="pic"><img src="img/garrofo.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Glosario y equivalencias</span></div>
+    <h1 class="s">Palabras de la paella</h1>
+    <dl class="cols" style="column-gap:8mm">
+      <dt>Albufera</dt><dd>Laguna costera cercana a Valencia, rodeada de arrozales.</dd>
+      <dt>Arroz bomba</dt><dd>Variedad de grano corto que absorbe mucho líquido sin romperse.</dd>
+      <dt>Azafrán</dt><dd>Especia obtenida de los estigmas de una flor; da color amarillo y aroma.</dd>
+      <dt>Cocción por absorción</dt><dd>Método en el que el arroz absorbe todo el líquido de cocción.</dd>
+      <dt>Garrofó</dt><dd>Poroto blanco, grande y plano, típico de la huerta valenciana.</dd>
+      <dt>Judías verdes</dt><dd>Nombre español de las chauchas.</dd>
+      <dt>Mise en place</dt><dd>Preparación y orden de los ingredientes antes de cocinar.</dd>
+      <dt>Organoléptico</dt><dd>Que puede percibirse por los sentidos.</dd>
+      <dt>Paella</dt><dd>Sartén amplia, baja y con dos asas; por extensión, el plato.</dd>
+      <dt>Pimentón</dt><dd>Pimiento rojo seco y molido.</dd>
+      <dt>Socarrat</dt><dd>Capa de arroz tostado que se forma en el fondo.</dd>
+      <dt>Sofrito</dt><dd>Base de verduras cocidas lentamente en aceite.</dd>
+    </dl>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9mm;margin-top:5mm">
+      <div><h3>Tamaño de la paella (aprox.)</h3><table>
+        <tr><td>30 cm</td><td class="q">2 a 3 porciones</td></tr><tr><td>40 cm</td><td class="q">4 a 6 porciones</td></tr>
+        <tr><td>50 cm</td><td class="q">7 a 9 porciones</td></tr><tr><td>60 cm</td><td class="q">10 a 14 porciones</td></tr></table></div>
+      <div><h3>Equivalencias</h3><table>
+        <tr><td>Arroz por porción</td><td class="q">100 g</td></tr><tr><td>1 taza de arroz</td><td class="q">≈ 200 g</td></tr>
+        <tr><td>1 cucharada (cda.)</td><td class="q">15 ml</td></tr><tr><td>1 cucharadita (cdta.)</td><td class="q">5 ml</td></tr></table></div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:5mm;padding-top:8mm">
-      <div class="box">
-        <h3 style="color:var(--pim)">Tamaño de la paella (aprox.)</h3>
-        <table>
-          <tr><th>Diámetro</th><th>Porciones</th></tr>
-          <tr><td>30 cm</td><td>2 a 3</td></tr>
-          <tr><td>40 cm</td><td>4 a 6</td></tr>
-          <tr><td>50 cm</td><td>7 a 9</td></tr>
-          <tr><td style="border-bottom:0">60 cm</td><td style="border-bottom:0">10 a 14</td></tr>
-        </table>
-      </div>
-      <div class="box">
-        <h3 style="color:var(--pim)">Equivalencias</h3>
-        <table>
-          <tr><td>Arroz por porción</td><td class="q">100 g</td></tr>
-          <tr><td>1 taza de arroz</td><td class="q">≈ 200 g</td></tr>
-          <tr><td>1 cucharada (cda.)</td><td class="q">15 ml</td></tr>
-          <tr><td>1 cucharadita (cdta.)</td><td class="q">5 ml</td></tr>
-          <tr><td style="border-bottom:0">c/n</td><td class="q" style="border-bottom:0">cantidad necesaria</td></tr>
-        </table>
-      </div>
-    </div>
+    <div class="pn"></div>
   </div>
-  <div class="folio"><span>Glosario</span></div>
 </section>
 
 <!-- 17 BIBLIOGRAFÍA -->
-<section class="page" data-toc="Bibliografía">
-  <div class="run"><span><b>La Paella</b></span><span>Bibliografía</span></div>
-  <div class="split" style="grid-template-columns:96mm 1fr">
-    <div>
-      <div class="kicker">Fuentes consultadas</div>
-      <h1>Bibliografía</h1>
-      <div class="rule"></div>
+<section class="page sp" data-toc="Bibliografía">
+  <div class="pic"><img src="img/arrozal.jpg"></div>
+  <div class="tx">
+    <div class="hd">La Paella<span>Bibliografía</span></div>
+    <h1>Bibliografía</h1>
+    <div class="one" style="font-size:9.2pt">
+      <p style="text-align:left;margin-bottom:3mm">Ministerio de Cultura de España. <i>Información sobre la paella valenciana y su valor cultural.</i></p>
+      <p style="text-align:left;text-indent:0;margin-bottom:3mm">Turismo de Valencia. <i>Historia y gastronomía tradicional valenciana.</i></p>
+      <p style="text-align:left;text-indent:0;margin-bottom:3mm">Generalitat Valenciana (2021). <i>Declaración de la paella valenciana como Bien de Interés Cultural inmaterial.</i></p>
+      <p style="text-align:left;text-indent:0">Real Academia Española. <i>Diccionario de la lengua española</i>, voz «paella».</p>
     </div>
-    <ul class="bib" style="padding-top:9mm">
-      <li>Ministerio de Cultura de España. <i>Información sobre la paella valenciana y su valor cultural.</i></li>
-      <li>Turismo de Valencia. <i>Historia y gastronomía tradicional valenciana.</i></li>
-      <li>Generalitat Valenciana (2021). <i>Declaración de la paella valenciana como Bien de Interés Cultural inmaterial.</i></li>
-      <li>Real Academia Española. <i>Diccionario de la lengua española</i>, voz «paella».</li>
-      <li style="margin-top:9mm;text-indent:0;margin-left:0"><h3 style="color:var(--pim)">Créditos de las fotografías</h3>
-      <span style="font-size:8.6pt;line-height:1.5;display:block">Todas las imágenes provienen de Wikimedia Commons y se reproducen bajo licencias libres. Pág. 4: Juan Emilio Prades Bel (CC BY 4.0). Pág. 5: Dorieo (CC BY-SA 4.0). Pág. 6: Retama (CC BY-SA 3.0) y Filo gèn' (CC BY-SA 4.0). Pág. 7: Juan Emilio Prades Bel (CC BY 4.0). Pág. 8: Ferbr1 (CC BY 3.0). Pág. 10: MiguelAlanCS (CC BY-SA 4.0). Pág. 11, de izquierda a derecha: Jan Harenburg (CC BY-SA 4.0), Manuel M. Vicente (CC BY 2.0), Tsumugii (CC BY-SA 4.0) y Avicentegil (CC BY-SA 4.0). Pág. 13: Juan Emilio Prades Bel (CC BY 4.0). Pág. 14: nikonvscanon, Flickr (CC BY 2.0).</span></li>
-    </ul>
+    <div style="margin-top:auto;margin-bottom:6mm">
+      <h3>Créditos de las fotografías</h3>
+      <p class="sm" style="font-size:7pt;text-align:left" id="credits"></p>
+    </div>
+    <div class="pn"></div>
   </div>
-  <div class="folio chip"><span>Bibliografía</span></div>
 </section>
 
 <!-- 18 CONTRATAPA -->
-<section class="page dark" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-  <div class="quote" style="max-width:190mm;margin-bottom:8mm">Un plato de origen rural que se convirtió en símbolo cultural reconocido en todo el mundo.</div>
-  <div class="rule" style="margin:0 auto 6mm"></div>
-  <div class="lab" style="color:#A99C8A">Agostina Lucas Magenta · 1.º A · Cocina y Pastelería · 2026</div>
+<section class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+  <div style="font:italic 500 21pt/1.3 'Playfair Display',serif;max-width:180mm;margin-bottom:8mm">“Estudiar la paella permite comprender que la gastronomía no consiste solamente en preparar alimentos, sino también en conservar tradiciones, transmitir conocimientos y compartir experiencias a través de la comida.”</div>
+  <div style="width:18mm;height:.5mm;background:var(--ink);margin-bottom:7mm"></div>
+  <div class="lab" style="color:var(--navy)">Agostina Lucas Magenta · 1.º A · Cocina y Pastelería · 2026</div>
 </section>
 
 <script>
 function rng(seed){let s=seed*9301+49297;return()=>{s=(s*16807)%2147483647;return (s&0xfffffff)/0x10000000}}
-function blob(r,R,n,rnd){const pts=[];for(let i=0;i<n;i++){const a=i/n*Math.PI*2,rr=r+(R-r)*rnd();pts.push([Math.cos(a)*rr,Math.sin(a)*rr])}
-  let d='';for(let i=0;i<n;i++){const p=pts[i],q=pts[(i+1)%n],m=[(p[0]+q[0])/2,(p[1]+q[1])/2];d+=(i?'':`M${m[0].toFixed(1)} ${m[1].toFixed(1)}`);
-    const q2=pts[(i+2)%n],m2=[(q[0]+q2[0])/2,(q[1]+q2[1])/2];d+=`Q${q[0].toFixed(1)} ${q[1].toFixed(1)} ${m2[0].toFixed(1)} ${m2[1].toFixed(1)}`}return d+'Z'}
-function paella(type,seed){
-  const rnd=rng(seed),R=250,id='g'+type+seed;let s='';
-  const soc=type==='socarrat';
-  s+=`<defs><radialGradient id="${id}" r="50%"><stop offset="0" stop-color="${soc?'#E0A12A':'#EDBA35'}"/><stop offset=".78" stop-color="${soc?'#C9841C':'#E5AC27'}"/><stop offset="1" stop-color="${soc?'#7A4313':'#BE7F16'}"/></radialGradient></defs>`;
-  // handles
-  for(const sx of [-1,1]) s+=`<rect x="${sx>0?262:-322}" y="-52" width="60" height="104" rx="30" fill="none" stroke="#2A2420" stroke-width="15"/>`;
-  s+=`<circle r="286" fill="#2A2420"/><circle r="272" fill="#463D36"/><circle r="262" fill="#2F2823"/><circle r="${R}" fill="url(#${id})"/>`;
-  // grains
-  const gc=soc?['#E8B43A','#D9982A','#B9731C','#F0C65A','#8E5216']:['#F5D262','#EDBE3A','#F8DC7C','#E0A522','#F2C94C'];
-  for(let i=0;i<1500;i++){const a=rnd()*6.283,r=Math.sqrt(rnd())*(R-5),x=Math.cos(a)*r,y=Math.sin(a)*r;
-    let c=gc[Math.floor(rnd()*gc.length)]; if(soc&&r>R*0.72&&rnd()<.6)c=['#7A4313','#96591A','#5E320E'][Math.floor(rnd()*3)];
-    s+=`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="5.4" ry="2.3" fill="${c}" transform="rotate(${(rnd()*180).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`}
+const T=(x,y,r,k,inner)=>`<g transform="translate(${x} ${y}) rotate(${r||0}) scale(${k||1})">${inner}</g>`;
+// Ilustración de portada: paella de mariscos vista desde arriba, rodeada de ingredientes
+function coverArt(){
+  const rnd=rng(12),R=250;let s='';
+  for(const sx of [-1,1]) s+=`<rect x="${sx>0?258:-326}" y="-58" width="68" height="116" rx="34" fill="none" stroke="#C8372A" stroke-width="17"/><rect x="${sx>0?258:-326}" y="-58" width="68" height="116" rx="34" fill="none" stroke="#E2604F" stroke-width="4" transform="translate(0 -3)"/>`;
+  s+=`<circle r="290" fill="#1D1D22"/><circle r="276" fill="#34343C"/><circle r="264" fill="#1D1D22"/>`;
+  for(let i=0;i<70;i++){const a=rnd()*6.283,r=266+rnd()*20;s+=`<circle cx="${(Math.cos(a)*r).toFixed(1)}" cy="${(Math.sin(a)*r).toFixed(1)}" r="1.6" fill="#8d8d99"/>`}
+  s+=`<circle r="${R}" fill="#E8922B"/>`;
+  const gc=['#F2B544','#EDA233','#F6C562','#E08A22','#F0AC3C','#D9741F'];
+  for(let i=0;i<1700;i++){const a=rnd()*6.283,r=Math.sqrt(rnd())*(R-5),x=Math.cos(a)*r,y=Math.sin(a)*r;
+    s+=`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="5.4" ry="2.3" fill="${gc[Math.floor(rnd()*gc.length)]}" transform="rotate(${(rnd()*180).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`}
   const placed=[];
-  function spot(min,maxR){for(let k=0;k<200;k++){const a=rnd()*6.283,r=Math.sqrt(rnd())*(maxR||R-34),x=Math.cos(a)*r,y=Math.sin(a)*r;
-    if(placed.every(p=>Math.hypot(p[0]-x,p[1]-y)>min+p[2])){placed.push([x,y,min]);return [x,y]}}return null}
-  const at=(p,inner,rot)=>`<g transform="translate(${p[0].toFixed(1)} ${p[1].toFixed(1)}) rotate(${rot===undefined?(rnd()*360).toFixed(0):rot})">${inner}</g>`;
-  const put=(n,min,fn)=>{for(let i=0;i<n;i++){const p=spot(min);if(p)s+=at(p,fn())}};
-  const meat=()=>{const d=blob(20,34,8,rnd);return `<path d="${d}" fill="#7C4318" transform="translate(2 3)" opacity=".35"/><path d="${d}" fill="${['#B5702F','#A45F26','#C07E3A'][Math.floor(rnd()*3)]}"/><path d="${blob(8,15,6,rnd)}" fill="#D49A55" opacity=".7" transform="translate(-4 -5)"/>`};
-  const bean=()=>`<rect x="-27" y="-6" width="54" height="12" rx="6" fill="#3F6627" opacity=".3" transform="translate(1.5 2.5)"/><rect x="-27" y="-6" width="54" height="12" rx="6" fill="${['#5E8A3A','#6E9A44','#527C33'][Math.floor(rnd()*3)]}"/><rect x="-21" y="-3.6" width="34" height="2.6" rx="1.3" fill="#9CC06B" opacity=".7"/>`;
-  const garrofo=()=>`<ellipse rx="14" ry="9.5" fill="#B99E5E" opacity=".35" transform="translate(1.5 2)"/><ellipse rx="14" ry="9.5" fill="#F3EAD0"/><ellipse rx="8" ry="4" cx="-2" cy="-2" fill="#FFFBEE"/>`;
-  const prawn=()=>`<path d="M-22 6A23 23 0 1 1 16 20" fill="none" stroke="#B5431F" stroke-width="15" stroke-linecap="round" opacity=".3" transform="translate(2 3)"/><path d="M-22 6A23 23 0 1 1 16 20" fill="none" stroke="#E9683A" stroke-width="15" stroke-linecap="round"/><path d="M-22 6A23 23 0 1 1 16 20" fill="none" stroke="#F6A27C" stroke-width="15" stroke-dasharray="3 9" opacity=".8"/><path d="M16 20l14 2-8 10z" fill="#C9502A"/>`;
-  const mussel=()=>`<path d="M-26 0C-22-17 14-19 27 0 14 19-22 17-26 0Z" fill="#1E1B26"/><path d="M-19 0C-15-10 10-11 19 0 10 11-15 10-19 0Z" fill="#E9953B"/><ellipse rx="9" ry="5" fill="#F4B869"/>`;
-  const ring=()=>`<circle r="14" fill="none" stroke="#C9B58A" stroke-width="8" opacity=".4" transform="translate(1.5 2)"/><circle r="14" fill="none" stroke="#FBF4E4" stroke-width="8"/>`;
-  const pepper=()=>`<path d="M-34 0Q0-13 34 0" fill="none" stroke="#8E1F12" stroke-width="11" stroke-linecap="round" opacity=".3" transform="translate(1.5 2.5)"/><path d="M-34 0Q0-13 34 0" fill="none" stroke="#C8372A" stroke-width="11" stroke-linecap="round"/><path d="M-26-3Q0-12 26-3" fill="none" stroke="#E86A55" stroke-width="2.5" stroke-linecap="round"/>`;
-  const arti=()=>`<path d="M0-28C22-16 22 14 0 28-22 14-22-16 0-28Z" fill="#6F7F3C"/><path d="M0-20C13-11 13 10 0 20-13 10-13-11 0-20Z" fill="#A9B56A"/><path d="M0-11C6-6 6 6 0 11-6 6-6-6 0-11Z" fill="#DCDDA0"/>`;
-  const pea=()=>`<circle r="6" fill="#6E9A44"/><circle r="2" cx="-2" cy="-2" fill="#A9CC7A"/>`;
-  const lemon=()=>`<path d="M-30 0A30 30 0 0 1 30 0Z" fill="#E2B21C"/><path d="M-25-1A25 25 0 0 1 25-1Z" fill="#F7E27A"/><path d="M0-1V-25M0-1L-17-18M0-1L17-18" stroke="#FBF1B4" stroke-width="2"/>`;
-  if(type==='valenciana'||soc){put(soc?5:9,40,meat);put(soc?8:15,26,bean);put(soc?9:16,16,garrofo)}
-  if(type==='mariscos'){put(7,40,prawn);put(8,30,mussel);put(9,22,ring);put(5,30,pepper);put(3,32,lemon)}
-  if(type==='mixta'){put(5,40,meat);put(5,40,prawn);put(5,30,mussel);put(6,28,bean);put(4,30,pepper);put(8,10,pea)}
-  if(type==='verduras'){put(7,32,arti);put(8,30,pepper);put(12,26,bean);put(22,9,pea);put(8,16,garrofo)}
-  return `<svg viewBox="-330 -300 660 600" xmlns="http://www.w3.org/2000/svg">${s}</svg>`}
-document.querySelectorAll('[data-paella]').forEach(e=>e.innerHTML=paella(e.dataset.paella,+e.dataset.seed));
-// diagrama del recipiente
-(document.getElementById('pan')||{}).innerHTML=`<svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat" font-size="11.5" font-weight="600" fill="#231E19">
- <g transform="translate(280 150)">
-  <rect x="-222" y="-22" width="50" height="44" rx="22" fill="none" stroke="#2A2420" stroke-width="9"/>
-  <rect x="172" y="-22" width="50" height="44" rx="22" fill="none" stroke="#2A2420" stroke-width="9"/>
-  <ellipse rx="178" ry="92" fill="#2A2420"/><ellipse rx="168" ry="84" fill="#5A5048"/><ellipse rx="150" ry="70" cy="6" fill="#463D36"/>
-  <ellipse rx="150" ry="70" cy="6" fill="none" stroke="#6d6258" stroke-width="1.5"/>
-  <path d="M-110 -18Q-40 -52 60 -44" fill="none" stroke="#8a7e72" stroke-width="3" stroke-linecap="round" opacity=".6"/>
- </g>
- <g stroke="#B23A1E" stroke-width="1.2" fill="none"><path d="M82 150V262"/><path d="M280 226V290"/><path d="M398 92L452 40"/><path d="M102 234H458" stroke-dasharray="4 4"/><path d="M102 228v12M458 228v12"/></g>
- <g fill="#B23A1E"><circle cx="82" cy="150" r="3.5"/><circle cx="280" cy="226" r="3.5"/><circle cx="398" cy="92" r="3.5"/></g>
- <text x="20" y="278">DOS ASAS LATERALES</text>
- <text x="280" y="306" text-anchor="middle">BASE AMPLIA: CAPA FINA DE ARROZ</text>
- <text x="340" y="30">BORDE BAJO: EVAPORA</text>
- <text x="340" y="45" font-weight="500">el líquido con rapidez</text>
-</svg>`;
+  const spot=(min)=>{for(let k=0;k<300;k++){const a=rnd()*6.283,r=Math.sqrt(rnd())*(R-38),x=Math.cos(a)*r,y=Math.sin(a)*r;
+    if(placed.every(p=>Math.hypot(p[0]-x,p[1]-y)>min+p[2])){placed.push([x,y,min]);return [x,y]}}return null};
+  const put=(n,min,fn)=>{for(let i=0;i<n;i++){const p=spot(min);if(p)s+=T(p[0].toFixed(1),p[1].toFixed(1),(rnd()*360).toFixed(0),1,fn())}};
+  const prawn=()=>`<path d="M-26 8A27 27 0 1 1 20 24" fill="none" stroke="#9E3A1C" stroke-width="19" stroke-linecap="round" opacity=".28" transform="translate(2 4)"/><path d="M-26 8A27 27 0 1 1 20 24" fill="none" stroke="#F0734A" stroke-width="19" stroke-linecap="round"/><path d="M-26 8A27 27 0 1 1 20 24" fill="none" stroke="#F9B093" stroke-width="19" stroke-dasharray="3 10" opacity=".85"/><path d="M20 24l18 3-10 13z" fill="#D2512B"/><circle cx="-27" cy="3" r="2.5" fill="#222"/>`;
+  const mussel=()=>`<path d="M-32 0C-27-21 17-23 33 0 17 23-27 21-32 0Z" fill="#17161F"/><path d="M-32 0C-27-21 17-23 33 0" fill="none" stroke="#4a4860" stroke-width="2"/><path d="M-23 0C-18-12 12-13 23 0 12 13-18 12-23 0Z" fill="#F0A04A"/><ellipse rx="11" ry="6" fill="#F8C784"/>`;
+  const pepper=()=>`<circle r="19" fill="none" stroke="#8E1F12" stroke-width="9" opacity=".3" transform="translate(2 3)"/><circle r="19" fill="none" stroke="#D2372A" stroke-width="9"/><circle r="22" fill="none" stroke="#EE6A58" stroke-width="2" stroke-dasharray="14 20"/>`;
+  const slice=()=>lemonHalf(.52);
+  const pea=()=>`<circle r="6.5" fill="#5E9A3C"/><circle r="2.2" cx="-2" cy="-2" fill="#A9D07A"/>`;
+  put(7,44,prawn);put(7,36,mussel);put(7,30,pepper);put(4,30,slice);put(16,10,pea);
+  return s}
+function lemonHalf(k){let l='';for(let i=0;i<8;i++){const a=i*Math.PI/4;l+=`<path d="M0 0L${(Math.cos(a)*36).toFixed(1)} ${(Math.sin(a)*36).toFixed(1)}" stroke="#FFF6C4" stroke-width="2.4"/>`}
+  return `<g transform="scale(${k||1})"><circle r="45" fill="#EDBE18"/><circle r="40" fill="#FFF3B0"/><circle r="36" fill="#F8DB4E"/>${l}<circle r="4" fill="#FFF6C4"/></g>`}
+const lemonWhole=`<path d="M-58 0C-58-38 28-46 52-12Q70 0 52 12C28 46-58 38-58 0Z" fill="#F2C81E"/><path d="M-40-14C-22-30 12-32 34-18" fill="none" stroke="#FBE680" stroke-width="7" stroke-linecap="round"/><circle cx="-56" cy="0" r="4" fill="#C9A116"/>`;
+const garlic=`<path d="M0-50C6-32 42-20 42 14C42 42 18 50 0 50C-18 50-42 42-42 14C-42-20-6-32 0-50Z" fill="#FBF6EE" stroke="#CDB9B3" stroke-width="2.5"/><path d="M0-44C-16-10-18 22-8 48M0-44C16-10 18 22 8 48M0-44V49" fill="none" stroke="#C99BB5" stroke-width="2"/><path d="M-3-62L3-62L2-46L-2-46Z" fill="#CDBE9A"/>`;
+const clove=`<path d="M0-26C19-9 19 16 0 26C-16 16-14-9 0-26Z" fill="#FBF3EA" stroke="#D3A9BC" stroke-width="2.2"/><path d="M0-20C6-6 6 10 0 20" fill="none" stroke="#E3C3D1" stroke-width="1.6"/>`;
+const leaf=(x,y,r)=>T(x,y,r,1,`<path d="M0 0C-14-8-20-22-10-30C-6-36 6-36 10-30C20-22 14-8 0 0Z" fill="#3E8E3A"/><path d="M0-2V-26" stroke="#7CC06A" stroke-width="1.6"/>`);
+const parsley=`<path d="M0 60C4 30-2 10 0-10M0 26C-14 14-22 10-30 4M0 18C14 6 22 2 30-4" fill="none" stroke="#3E8E3A" stroke-width="3" stroke-linecap="round"/>${leaf(0,-10,0)}${leaf(0,-10,-55)}${leaf(0,-10,55)}${leaf(-30,4,-60)}${leaf(-30,4,-115)}${leaf(-30,4,-5)}${leaf(30,-4,60)}${leaf(30,-4,115)}${leaf(30,-4,5)}`;
+const pod=`<path d="M-70 4Q0-40 70 4Q0 22-70 4Z" fill="#5E9A3C"/><path d="M-70 4Q0-40 70 4" fill="none" stroke="#3F7A2B" stroke-width="2.5"/>${[-36,-12,12,36].map(x=>`<circle cx="${x}" cy="${-8+Math.abs(x)/7}" r="9.5" fill="#8CC65A"/><circle cx="${x-3}" cy="${-11+Math.abs(x)/7}" r="3" fill="#C4E79C"/>`).join('')}<path d="M70 4l14-6" stroke="#3F7A2B" stroke-width="3" stroke-linecap="round"/>`;
+const saffron=[-50,-28,-10,8,26,48,70].map((a,i)=>`<path d="M0 0Q${10+i*2}-24 ${4+i}-${46+i*3}" fill="none" stroke="${i%2?'#B31F17':'#D0352A'}" stroke-width="3" stroke-linecap="round" transform="rotate(${a})"/>`).join('');
+const corns=[[0,0],[16,10],[-12,14],[6,-16],[26,-8]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="5.5" fill="#2A2422"/><circle cx="${p[0]-1.5}" cy="${p[1]-1.5}" r="1.6" fill="#6b625d"/>`).join('');
+function cover(){
+  const g=[
+   T(-455,-150,-18,1,lemonWhole),T(-345,-205,0,.9,lemonHalf()),T(-540,-20,-10,1.05,parsley),T(-400,25,72,.95,pod),
+   T(-430,165,8,1,garlic),T(-530,150,-25,1,clove),T(-335,215,30,.9,clove),T(-350,120,0,1,corns),
+   T(385,-185,-28,1,pod),T(480,-70,6,1.05,garlic),T(555,-150,20,1,clove),T(350,-95,0,1,corns),
+   T(410,150,0,1,lemonHalf()),T(525,70,12,1.05,parsley),T(330,225,0,1.1,saffron),T(530,205,-30,.9,clove),T(-320,-110,180,.9,saffron)];
+  return `<svg viewBox="-620 -272 1240 544" xmlns="http://www.w3.org/2000/svg">${g.join('')}<g transform="scale(.82)">${coverArt()}</g></svg>`}
+document.getElementById('coverart').innerHTML=cover();
 // índice
 const pages=[...document.querySelectorAll('.page')];let n=0;
 document.getElementById('toc').innerHTML=pages.map((p,i)=>p.dataset.toc?`<li><i>${String(++n).padStart(2,'0')}</i><span>${p.dataset.toc}</span><b>${i+1}</b></li>`:'').join('');
+// créditos de fotos (los datos están en credits.js)
+if(window.CREDITS){const by={};pages.forEach((p,i)=>p.querySelectorAll('.pic img').forEach(im=>{const k=im.getAttribute('src').replace('img/','').replace('.jpg','');(by[i+1]=by[i+1]||[]).push(CREDITS[k]||k)}));
+  document.getElementById('credits').innerHTML='Todas las imágenes provienen de Wikimedia Commons y se reproducen bajo licencias libres. '+Object.entries(by).map(([pg,a])=>`Pág. ${pg}: ${a.join('; ')}.`).join(' ')}
 </script>
 </body>
 </html>
