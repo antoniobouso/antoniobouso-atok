@@ -11,6 +11,7 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1123, height: 794 } });
 await page.goto('file://' + path.join(dir, 'libro.html'), { waitUntil: 'networkidle' });
 await page.evaluate(() => document.fonts.ready);
+await page.evaluate(() => window.pruneFills && window.pruneFills());
 
 const report = await page.evaluate(() => ({
   fonts: ['Playfair Display', 'Lora', 'Montserrat'].map(f => f + ':' + document.fonts.check(`12px "${f}"`)),

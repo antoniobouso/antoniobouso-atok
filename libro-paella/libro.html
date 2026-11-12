@@ -59,6 +59,8 @@ td.q{text-align:right;font-weight:700;white-space:nowrap;padding-left:3mm}
 .toc li b{font:700 7pt 'Montserrat',sans-serif}
 dl dt{font:italic 700 9.4pt 'Playfair Display',serif}
 dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
+.fill{flex:1 1 0;min-height:0;margin-top:6mm;overflow:hidden}
+.fill img{width:100%;height:100%;object-fit:cover;display:block}
 .sm{font-size:8.7pt;line-height:1.42}
 .lab{font:600 6.6pt 'Montserrat',sans-serif;letter-spacing:.22em;text-transform:uppercase}
 
@@ -83,23 +85,26 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 </section>
 
 <!-- 2 PORTADILLA -->
-<section class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-  <div class="lab" style="color:var(--navy);margin-bottom:6mm">Monografía</div>
-  <div style="font:italic 500 50pt/1 'Playfair Display',serif;margin-bottom:6mm">La Paella</div>
-  <div style="width:18mm;height:.5mm;background:var(--ink);margin-bottom:6mm"></div>
-  <div style="font:italic 700 11pt/1.45 'Lora',serif;margin-bottom:14mm">Historia, origen, elaboración e importancia<br>en la gastronomía española</div>
-  <table style="width:104mm">
-    <tr><th>Alumna</th><td>Agostina Lucas Magenta</td></tr>
-    <tr><th>Curso</th><td>1.º A</td></tr>
-    <tr><th>Materia</th><td>Cocina y Pastelería</td></tr>
-    <tr><th>Trabajo</th><td>Monografía</td></tr>
-    <tr><th>Año</th><td>2026</td></tr>
-  </table>
+<section class="page sp">
+  <div class="pic"><img src="img2/cupula.jpg"></div>
+  <div class="tx" style="align-items:center;justify-content:center;text-align:center">
+    <div class="lab" style="color:var(--navy);margin-bottom:6mm">Monografía</div>
+    <div style="font:italic 500 44pt/1 'Playfair Display',serif;margin-bottom:6mm">La Paella</div>
+    <div style="width:18mm;height:.5mm;background:var(--ink);margin-bottom:6mm"></div>
+    <div style="font:italic 700 11pt/1.45 'Lora',serif;margin-bottom:12mm">Historia, origen, elaboración e importancia<br>en la gastronomía española</div>
+    <table style="width:96mm">
+      <tr><th>Alumna</th><td>Agostina Lucas Magenta</td></tr>
+      <tr><th>Curso</th><td>1.º A</td></tr>
+      <tr><th>Materia</th><td>Cocina y Pastelería</td></tr>
+      <tr><th>Trabajo</th><td>Monografía</td></tr>
+      <tr><th>Año</th><td>2026</td></tr>
+    </table>
+  </div>
 </section>
 
 <!-- 3 ÍNDICE -->
 <section class="page sp">
-  <div class="pic"><img src="img/fruitmer.jpg"></div>
+  <div class="pic"><img src="img2/mercado.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Contenido</span></div>
     <h1>Índice</h1>
@@ -110,7 +115,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 4 INTRODUCCIÓN -->
 <section class="page sp" data-toc="Introducción">
-  <div class="pic"><img src="img/hero.jpg"></div>
+  <div class="pic"><img src="img2/concurso.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Introducción</span></div>
     <h1>Un plato que<br>cuenta una cultura</h1>
@@ -129,13 +134,14 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
         <p>Su elaboración permite conocer diferentes técnicas culinarias, la importancia de los ingredientes y el comportamiento del arroz durante la cocción.</p>
       </div>
     </div>
+    <div class="fill"><img src="img2/valenciana.jpg" style="object-position:50% 45%"></div>
     <div class="pn"></div>
   </div>
 </section>
 
 <!-- 5 ORIGEN E HISTORIA -->
 <section class="page sp" data-toc="Origen e historia">
-  <div class="pic"><img src="img/albufera.jpg" style="object-position:62% 50%"></div>
+  <div class="pic"><img src="img2/albufera.jpg" style="object-position:50% 50%"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Origen e historia</span></div>
     <h1>De la Albufera<br>al mundo</h1>
@@ -161,7 +167,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 6 INGREDIENTES -->
 <section class="page sp" data-toc="Ingredientes principales">
-  <div class="pic"><img src="img/arroz.jpg"></div>
+  <div class="pic g4"><img src="img2/grano.jpg"><img src="img2/azafran.jpg"><img src="img2/tomates.jpg"><img src="img2/pimiento.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Ingredientes principales</span></div>
     <h1>Los ingredientes<br>de la huerta</h1>
@@ -185,7 +191,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 7 RECIPIENTE Y TÉCNICAS -->
 <section class="page sp" data-toc="El recipiente y las técnicas de elaboración">
-  <div class="pic"><img src="img/tradicional.jpg"></div>
+  <div class="pic"><img src="img2/cocinando.jpg" style="object-position:35% 50%"></div>
   <div class="tx">
     <div class="hd">La Paella<span>El recipiente y las técnicas</span></div>
     <h1>La sartén que<br>le dio nombre</h1>
@@ -211,7 +217,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 8 RECETA -->
 <section class="page sp" data-toc="Receta: paella valenciana tradicional">
-  <div class="pic"><img src="img/pato.jpg"></div>
+  <div class="pic"><img src="img2/miseplace.jpg" style="object-position:60% 50%"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Receta · Ficha técnica</span></div>
     <h1 class="s" style="font-size:22pt;white-space:nowrap;margin:5mm 0">Paella valenciana tradicional</h1>
@@ -252,7 +258,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 9 PASO A PASO -->
 <section class="page sp" data-toc="Elaboración paso a paso">
-  <div class="pic"><img src="img/ebullicion.jpg"></div>
+  <div class="pic"><img src="img2/cocinero.jpg" style="object-position:70% 50%"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Receta · Paso a paso</span></div>
     <h1 class="s">Paso a paso</h1>
@@ -276,7 +282,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 10 SOCARRAT -->
 <section class="page sp" data-toc="El socarrat">
-  <div class="pic"><img src="img/socarrat.jpg"></div>
+  <div class="pic"><img src="img2/fuego.jpg" style="object-position:40% 50%"></div>
   <div class="tx">
     <div class="hd">La Paella<span>El socarrat</span></div>
     <h1>El tesoro<br>del fondo</h1>
@@ -293,13 +299,14 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
         <p>El socarrat es considerado por muchos especialistas una de las características que distinguen a una buena paella.</p>
       </div>
     </div>
+    <div class="fill"><img src="img2/andalucia.jpg" style="object-position:50% 50%"></div>
     <div class="pn"></div>
   </div>
 </section>
 
 <!-- 11 VARIEDADES -->
 <section class="page sp" data-toc="Variedades de paella">
-  <div class="pic g4"><img src="img/valenciana.jpg"><img src="img/mariscos.jpg"><img src="img/mixta.jpg"><img src="img/verduras.jpg"></div>
+  <div class="pic g4"><img src="img2/valenciana.jpg"><img src="img2/mariscos.jpg"><img src="img2/andalucia.jpg"><img src="img2/alcauciles.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Variedades</span></div>
     <h1>Cuatro versiones,<br>una misma raíz</h1>
@@ -311,13 +318,14 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
       <div><h2>De verduras</h2><p>Utiliza diferentes vegetales como alcauciles, pimientos y judías verdes.</p></div>
     </div>
     <p class="lead" style="margin:7mm 0 0">Estas variedades demuestran cómo una preparación tradicional puede evolucionar y adaptarse a diferentes gustos sin perder su reconocimiento gastronómico.</p>
+    <div class="fill"><img src="img2/fuego.jpg" style="object-position:50% 30%"></div>
     <div class="pn"></div>
   </div>
 </section>
 
 <!-- 12 ORGANOLÉPTICAS -->
 <section class="page sp" data-toc="Características organolépticas">
-  <div class="pic"><img src="img/familia.jpg"></div>
+  <div class="pic"><img src="img2/dorado.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Características organolépticas</span></div>
     <h1>La paella con<br>los sentidos</h1>
@@ -329,13 +337,14 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
       <div><h3>Tacto</h3><h2>Textura</h2><p>El arroz debe quedar cocido y suelto, las carnes tiernas y las verduras en su punto adecuado.</p></div>
     </div>
     <p style="margin-top:6mm">La presentación también es importante, ya que los ingredientes deben estar distribuidos de manera atractiva sobre el arroz.</p>
+    <div class="fill"><img src="img2/mariscos.jpg" style="object-position:50% 50%"></div>
     <div class="pn"></div>
   </div>
 </section>
 
 <!-- 13 CONSEJOS -->
 <section class="page sp" data-toc="Consejos, errores frecuentes y servicio">
-  <div class="pic"><img src="img/plato.jpg"></div>
+  <div class="pic"><img src="img2/utensilios.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Consejos y servicio</span></div>
     <h1 class="s">Aciertos y errores<br>frecuentes</h1>
@@ -363,7 +372,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 14 IMPORTANCIA CULTURAL -->
 <section class="page sp" data-toc="Importancia cultural y gastronómica">
-  <div class="pic"><img src="img/calle.jpg"></div>
+  <div class="pic"><img src="img2/chef.jpg" style="object-position:75% 50%"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Importancia cultural y gastronómica</span></div>
     <h1>Mucho más<br>que una comida</h1>
@@ -377,13 +386,14 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
         <p>Esta expansión demuestra la importancia de la gastronomía como medio de intercambio cultural.</p>
       </div>
     </div>
+    <div class="fill"><img src="img2/concurso.jpg" style="object-position:50% 80%"></div>
     <div class="pn"></div>
   </div>
 </section>
 
 <!-- 15 CONCLUSIÓN -->
 <section class="page sp" data-toc="Conclusión">
-  <div class="pic"><img src="img/marisco2.jpg"></div>
+  <div class="pic"><img src="img2/pasillo.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Conclusión</span></div>
     <h1>De plato rural<br>a símbolo mundial</h1>
@@ -394,13 +404,14 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
       <p>Además, sus diferentes variedades demuestran la capacidad de la cocina para evolucionar y adaptarse a distintas culturas y preferencias.</p>
       <p>En conclusión, estudiar la paella permite comprender que la gastronomía no consiste solamente en preparar alimentos, sino también en conservar tradiciones, transmitir conocimientos y compartir experiencias a través de la comida.</p>
     </div>
+    <div class="fill"><img src="img2/mercado.jpg" style="object-position:50% 60%"></div>
     <div class="pn"></div>
   </div>
 </section>
 
 <!-- 16 GLOSARIO -->
 <section class="page sp" data-toc="Glosario y equivalencias">
-  <div class="pic"><img src="img/garrofo.jpg"></div>
+  <div class="pic"><img src="img2/aceitunas.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Glosario y equivalencias</span></div>
     <h1 class="s">Palabras de la paella</h1>
@@ -432,7 +443,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 17 BIBLIOGRAFÍA -->
 <section class="page sp" data-toc="Bibliografía">
-  <div class="pic"><img src="img/arrozal.jpg"></div>
+  <div class="pic"><img src="img2/colon.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Bibliografía</span></div>
     <h1>Bibliografía</h1>
@@ -451,10 +462,13 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 </section>
 
 <!-- 18 CONTRATAPA -->
-<section class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-  <div style="font:italic 500 21pt/1.3 'Playfair Display',serif;max-width:180mm;margin-bottom:8mm">“Estudiar la paella permite comprender que la gastronomía no consiste solamente en preparar alimentos, sino también en conservar tradiciones, transmitir conocimientos y compartir experiencias a través de la comida.”</div>
-  <div style="width:18mm;height:.5mm;background:var(--ink);margin-bottom:7mm"></div>
-  <div class="lab" style="color:var(--navy)">Agostina Lucas Magenta · 1.º A · Cocina y Pastelería · 2026</div>
+<section class="page sp">
+  <div class="pic"><img src="img2/albufera.jpg" style="object-position:50% 50%"></div>
+  <div class="tx" style="background:var(--navy);color:#fff;align-items:center;justify-content:center;text-align:center;padding:20mm">
+    <div style="font:italic 500 19pt/1.35 'Playfair Display',serif;margin-bottom:9mm">“Estudiar la paella permite comprender que la gastronomía no consiste solamente en preparar alimentos, sino también en conservar tradiciones, transmitir conocimientos y compartir experiencias a través de la comida.”</div>
+    <div style="width:18mm;height:.5mm;background:#fff;margin-bottom:7mm"></div>
+    <div class="lab" style="line-height:1.9">Agostina Lucas Magenta<br>1.º A · Cocina y Pastelería · 2026</div>
+  </div>
 </section>
 
 <script>
@@ -502,12 +516,13 @@ document.getElementById('coverart').innerHTML=cover();
 // índice
 const pages=[...document.querySelectorAll('.page')];let n=0;
 // cada hoja apaisada es una doble página: izquierda impar, derecha par
-const R=i=>2*i+2;
+const R=i=>2*i+1;
 document.getElementById('toc').innerHTML=pages.map((p,i)=>p.dataset.toc?`<li><i>${String(++n).padStart(2,'0')}</i><span>${p.dataset.toc}</span><b>${R(i)}</b></li>`:'').join('');
 pages.forEach((p,i)=>{const pn=p.querySelector('.pn');if(pn)pn.textContent=R(i);const pic=p.querySelector('.pic');if(pic)pic.insertAdjacentHTML('beforeend',`<div class="pl">${R(i)-1}</div>`)});
 // créditos de fotos (los datos están en credits.js)
-if(window.CREDITS){const by={};pages.forEach((p,i)=>p.querySelectorAll('.pic img').forEach(im=>{const k=im.getAttribute('src').replace('img/','').replace('.jpg','');(by[2*i+1]=by[2*i+1]||[]).push(CREDITS[k]||k)}));
-  document.getElementById('credits').innerHTML='Todas las imágenes provienen de Wikimedia Commons y se reproducen bajo licencias libres. '+Object.entries(by).map(([pg,a])=>`Pág. ${pg}: ${a.join('; ')}.`).join(' ')}
+if(window.CREDITS){const by={};pages.forEach((p,i)=>p.querySelectorAll('.pic img, .fill img').forEach(im=>{const k=im.getAttribute('src').replace('img2/','').replace('.jpg','');(by[`${2*i}-${2*i+1}`]=by[`${2*i}-${2*i+1}`]||[]).push(CREDITS[k]||k)}));
+  document.getElementById('credits').innerHTML='Todas las fotografías provienen de Wikimedia Commons (imágenes de calidad) y se reproducen bajo licencias libres. '+Object.entries(by).map(([pg,a])=>`Págs. ${pg}: ${[...new Set(a)].join('; ')}.`).join(' ')}
+window.pruneFills=()=>document.querySelectorAll('.fill').forEach(f=>{if(f.getBoundingClientRect().height<130)f.remove()});
 </script>
 </body>
 </html>
