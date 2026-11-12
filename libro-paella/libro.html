@@ -24,7 +24,7 @@ body{font-family:'Lora',Georgia,serif;color:var(--ink);font-size:10pt;line-heigh
 .hd{text-align:right;font:700 5.8pt/1.5 'Montserrat',sans-serif;letter-spacing:.04em}
 .hd span{display:block;font-weight:400;color:var(--soft)}
 .pn{position:absolute;right:17mm;bottom:9mm;font:700 7pt 'Montserrat',sans-serif}
-.pn::after{content:counter(pg)}
+.pl{position:absolute;left:12mm;bottom:9mm;font:700 7pt 'Montserrat',sans-serif;color:#fff;text-shadow:0 0 2mm rgba(0,0,0,.7)}
 h1{font:italic 500 35pt/1.06 'Playfair Display',serif;text-align:center;margin:9mm 0 8mm;letter-spacing:-.005em}
 h1.s{font-size:28pt;margin:6mm 0 6mm}
 .lead{font:italic 700 10.6pt/1.42 'Lora',serif;margin-bottom:6mm;text-align:justify}
@@ -41,7 +41,7 @@ h2{font:italic 700 11pt/1.2 'Playfair Display',serif;margin-bottom:.6mm}
 .strip div{padding:2mm 2.5mm 0 0;font-size:7.5pt;line-height:1.35}
 .strip b{display:block;font:italic 700 8.6pt 'Playfair Display',serif}
 table{border-collapse:collapse;width:100%}
-td,th{padding:1.15mm 0;border-bottom:.2mm solid var(--line);text-align:left;font-size:9.1pt;vertical-align:top}
+td,th{padding:1mm 0;border-bottom:.2mm solid var(--line);text-align:left;font-size:9.1pt;vertical-align:top}
 th{font:700 5.8pt 'Montserrat',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);padding-right:4mm;white-space:nowrap}
 td.q{text-align:right;font-weight:700;white-space:nowrap;padding-left:3mm}
 .stats{display:grid;grid-template-columns:repeat(5,1fr);border-top:.35mm solid var(--ink);border-bottom:.35mm solid var(--ink);margin-bottom:5mm}
@@ -99,7 +99,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 3 ÍNDICE -->
 <section class="page sp">
-  <div class="pic"><img src="img/tradicional.jpg"></div>
+  <div class="pic"><img src="img/fruitmer.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Contenido</span></div>
     <h1>Índice</h1>
@@ -185,7 +185,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 7 RECIPIENTE Y TÉCNICAS -->
 <section class="page sp" data-toc="El recipiente y las técnicas de elaboración">
-  <div class="pic"><img src="img/paelleras.jpg"></div>
+  <div class="pic"><img src="img/tradicional.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>El recipiente y las técnicas</span></div>
     <h1>La sartén que<br>le dio nombre</h1>
@@ -210,16 +210,16 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 </section>
 
 <!-- 8 RECETA -->
-<section class="page sp" data-toc="Receta: paella valenciana tradicional" style="--pw:112mm">
-  <div class="pic"><img src="img/lena.jpg" style="object-position:55% 50%"></div>
+<section class="page sp" data-toc="Receta: paella valenciana tradicional">
+  <div class="pic"><img src="img/pato.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Receta · Ficha técnica</span></div>
-    <h1 class="s">Paella valenciana tradicional</h1>
+    <h1 class="s" style="font-size:22pt;white-space:nowrap;margin:5mm 0">Paella valenciana tradicional</h1>
     <div class="stats">
       <div>Porciones<b>4</b></div><div>Preparación<b>20 min</b></div><div>Cocción<b>60 min</b></div><div>Reposo<b>5 min</b></div><div>Dificultad<b>Media</b></div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9mm">
-      <div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm 8mm">
+      <div style="grid-column:span 2">
         <h3>Ingredientes</h3>
         <table>
           <tr><td>Arroz bomba</td><td class="q">400 g</td></tr>
@@ -238,6 +238,8 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
       <div>
         <h3>Mise en place</h3>
         <p class="sm" style="text-align:left;margin-bottom:4mm">1. Trocear el pollo y el conejo en piezas parejas y salarlas.<br>2. Lavar las judías, quitar las puntas y cortarlas en tramos.<br>3. Rallar el tomate y descartar la piel.<br>4. Pesar el arroz. No se lava: su almidón ayuda a ligar el caldo.<br>5. Medir el agua y tener a mano azafrán, pimentón y sal.</p>
+      </div>
+      <div>
         <h3>Utensilios</h3>
         <p class="sm" style="text-align:left;margin-bottom:4mm">Paella de 40 cm · Fuego amplio y parejo (paellero, hornalla grande o leña) · Espumadera · Rallador · Tabla y cuchillo · Jarra medidora · Paño limpio.</p>
         <h3>Alérgenos</h3>
@@ -249,7 +251,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 </section>
 
 <!-- 9 PASO A PASO -->
-<section class="page sp" data-toc="Elaboración paso a paso" style="--pw:112mm">
+<section class="page sp" data-toc="Elaboración paso a paso">
   <div class="pic"><img src="img/ebullicion.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Receta · Paso a paso</span></div>
@@ -265,8 +267,8 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
       <div><i>7</i><span><b>Socarrat</b>Con el arroz ya seco, subir el fuego 1 o 2 minutos. Cuando crepita y huele a tostado, retirar de inmediato.</span></div>
       <div><i>8</i><span><b>Reposo</b>Dejar reposar 5 minutos fuera del fuego, cubierta con un paño limpio. Servir en la misma paella.</span></div>
     </div>
-    <div class="strip" style="grid-template-columns:10fr 9fr 20fr 18fr 8fr 9fr;margin-bottom:6mm">
-      <div><b>0–10 min</b>Dorar</div><div><b>10–18</b>Sofrito</div><div><b>18–38 min</b>Hervor del caldo</div><div><b>38–56 min</b>Cocción del arroz</div><div><b>56–58</b>Socarrat</div><div><b>+ 5 min</b>Reposo</div>
+    <div class="strip" style="grid-template-columns:8fr 9fr 17fr 17fr 9fr 9fr;margin-bottom:6mm">
+      <div><b>0–10</b>Dorar</div><div><b>10–18</b>Sofrito</div><div><b>18–38 min</b>Hervor del caldo</div><div><b>38–56 min</b>Cocción del arroz</div><div><b>56–58</b>Socarrat</div><div><b>+ 5 min</b>Reposo</div>
     </div>
     <div class="pn"></div>
   </div>
@@ -315,7 +317,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 
 <!-- 12 ORGANOLÉPTICAS -->
 <section class="page sp" data-toc="Características organolépticas">
-  <div class="pic"><img src="img/pato.jpg"></div>
+  <div class="pic"><img src="img/familia.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Características organolépticas</span></div>
     <h1>La paella con<br>los sentidos</h1>
@@ -397,7 +399,7 @@ dl dd{font-size:8.5pt;line-height:1.38;margin-bottom:1.7mm;break-inside:avoid}
 </section>
 
 <!-- 16 GLOSARIO -->
-<section class="page sp" data-toc="Glosario y equivalencias" style="--pw:112mm">
+<section class="page sp" data-toc="Glosario y equivalencias">
   <div class="pic"><img src="img/garrofo.jpg"></div>
   <div class="tx">
     <div class="hd">La Paella<span>Glosario y equivalencias</span></div>
@@ -499,9 +501,12 @@ function cover(){
 document.getElementById('coverart').innerHTML=cover();
 // índice
 const pages=[...document.querySelectorAll('.page')];let n=0;
-document.getElementById('toc').innerHTML=pages.map((p,i)=>p.dataset.toc?`<li><i>${String(++n).padStart(2,'0')}</i><span>${p.dataset.toc}</span><b>${i+1}</b></li>`:'').join('');
+// cada hoja apaisada es una doble página: izquierda impar, derecha par
+const R=i=>2*i+2;
+document.getElementById('toc').innerHTML=pages.map((p,i)=>p.dataset.toc?`<li><i>${String(++n).padStart(2,'0')}</i><span>${p.dataset.toc}</span><b>${R(i)}</b></li>`:'').join('');
+pages.forEach((p,i)=>{const pn=p.querySelector('.pn');if(pn)pn.textContent=R(i);const pic=p.querySelector('.pic');if(pic)pic.insertAdjacentHTML('beforeend',`<div class="pl">${R(i)-1}</div>`)});
 // créditos de fotos (los datos están en credits.js)
-if(window.CREDITS){const by={};pages.forEach((p,i)=>p.querySelectorAll('.pic img').forEach(im=>{const k=im.getAttribute('src').replace('img/','').replace('.jpg','');(by[i+1]=by[i+1]||[]).push(CREDITS[k]||k)}));
+if(window.CREDITS){const by={};pages.forEach((p,i)=>p.querySelectorAll('.pic img').forEach(im=>{const k=im.getAttribute('src').replace('img/','').replace('.jpg','');(by[2*i+1]=by[2*i+1]||[]).push(CREDITS[k]||k)}));
   document.getElementById('credits').innerHTML='Todas las imágenes provienen de Wikimedia Commons y se reproducen bajo licencias libres. '+Object.entries(by).map(([pg,a])=>`Pág. ${pg}: ${a.join('; ')}.`).join(' ')}
 </script>
 </body>
