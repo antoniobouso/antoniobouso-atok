@@ -40,6 +40,9 @@ p{margin-bottom:3.2mm;text-align:justify;hyphens:auto}
 .note p{text-align:left}
 small,.sm{font-size:9pt;line-height:1.45}
 .art{position:absolute}
+.ph{position:absolute;overflow:hidden}
+img.f{width:100%;height:100%;object-fit:cover;display:block}
+.cap{font:500 6.3pt 'Montserrat',sans-serif;letter-spacing:.06em;color:var(--soft);margin-top:1.5mm}
 .art svg{width:100%;height:100%;display:block}
 table{border-collapse:collapse;width:100%}
 td,th{padding:1.7mm 2mm;border-bottom:.25mm solid var(--line);text-align:left;font-size:9.4pt;vertical-align:top}
@@ -142,7 +145,6 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
       <div class="lab">De la conclusión de este trabajo</div>
     </div>
   </div>
-  <div class="art" data-paella="valenciana" data-seed="21" style="right:-40mm;top:-48mm;width:140mm;height:140mm"></div>
   <div class="folio"><span>Agostina Lucas Magenta</span></div>
 </section>
 
@@ -174,7 +176,7 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
       </div>
     </div>
   </div>
-  <div class="art" data-paella="valenciana" data-seed="3" style="right:-34mm;top:-40mm;width:150mm;height:150mm"></div>
+  <div class="ph" style="right:0;top:0;width:124mm;height:122mm"><img class="f" src="img/hero.jpg"></div>
   <div class="folio"><span>Introducción</span></div>
 </section>
 
@@ -186,6 +188,7 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
       <div class="kicker">Origen e historia</div>
       <h1>De la Albufera<br>al mundo</h1>
       <div class="rule"></div>
+      <img class="f" src="img/albufera.jpg" style="height:30mm"><div class="cap" style="margin-bottom:4mm">Barca tradicional en la Albufera de Valencia.</div>
       <div class="note"><h3 style="color:var(--pim)">¿De dónde viene el nombre?</h3>
       <p class="sm">«Paella» es la palabra valenciana para «sartén» y proviene del latín <i>patella</i>. El plato tomó el nombre del recipiente en el que se cocina.</p></div>
     </div>
@@ -220,6 +223,10 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
       <div class="rule"></div>
       <p>La paella tradicional valenciana se caracteriza por utilizar ingredientes propios de la región.</p>
       <p>El arroz es el ingrediente fundamental, ya que absorbe los sabores del resto de los alimentos durante la cocción. El pollo y el conejo aportan proteínas y sabor, mientras que las verduras incorporan diferentes texturas y aromas.</p>
+      <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:2mm">
+        <div><img class="f" src="img/arroz.jpg" style="height:30mm"><div class="cap">Arroz bomba.</div></div>
+        <div><img class="f" src="img/garrofo.jpg" style="height:30mm"><div class="cap">Garrofó: vainas y semillas.</div></div>
+      </div>
     </div>
     <div class="grid" style="grid-template-columns:repeat(5,1fr);align-content:center">
       <div class="card"><div class="dot" style="background:#F6EFD9"></div><h3>Arroz</h3><p>El protagonista. La variedad bomba absorbe mucho líquido y mantiene su forma.</p></div>
@@ -253,7 +260,7 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
       </div>
     </div>
     <div>
-      <div class="art" id="pan" style="position:relative;width:112mm;height:66mm;margin-bottom:4mm"></div>
+      <img class="f" src="img/paelleras.jpg" style="width:112mm;height:60mm"><div class="cap" style="margin-bottom:4mm">Paelleras de distintos diámetros a la venta en Valencia.</div>
       <div class="grid" style="grid-template-columns:1fr 1fr">
         <div class="card"><h3 style="color:var(--pim)">Dorado</h3><p>Sellar las carnes a fuego vivo para que tomen color y sabor.</p></div>
         <div class="card"><h3 style="color:var(--pim)">Sofrito</h3><p>Cocinar suavemente verduras y tomate en el aceite.</p></div>
@@ -316,7 +323,7 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
       <p class="sm" style="text-align:left">1. Trocear el pollo y el conejo en piezas parejas y salarlas.<br>2. Lavar las judías, quitar las puntas y cortarlas en tramos.<br>3. Rallar el tomate y descartar la piel.<br>4. Pesar el arroz. No se lava: su almidón ayuda a ligar el caldo.<br>5. Medir el agua y tener a mano azafrán, pimentón y sal.</p>
     </div>
   </div>
-  <div class="art" data-paella="valenciana" data-seed="16" style="right:-20mm;bottom:-92mm;width:170mm;height:170mm"></div>
+  <div class="ph" style="right:20mm;bottom:22mm;width:143mm;height:60mm"><img class="f" src="img/lena.jpg" style="object-position:50% 60%"></div>
   <div class="folio chip"><span>Receta</span></div>
 </section>
 
@@ -355,7 +362,7 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
 <!-- 10 SOCARRAT -->
 <section class="page dark" data-toc="El socarrat">
   <div class="run"><span><b style="color:var(--saffron)">La Paella</b></span><span>El socarrat</span></div>
-  <div class="art" data-paella="socarrat" data-seed="11" style="left:-78mm;top:-10mm;width:230mm;height:230mm"></div>
+  <div class="ph" style="left:0;top:0;width:142mm;height:210mm"><img class="f" src="img/socarrat.jpg"></div>
   <div style="position:absolute;right:20mm;top:26mm;bottom:22mm;width:112mm;display:flex;flex-direction:column;justify-content:center">
     <div class="kicker">El socarrat</div>
     <h1>El tesoro<br>del fondo</h1>
@@ -379,10 +386,10 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
     <p style="max-width:108mm;margin:0">Con el paso del tiempo surgieron diferentes versiones de esta preparación, adaptadas a los ingredientes y las costumbres de cada región.</p>
   </div>
   <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:7mm">
-    <div><div class="art" data-paella="valenciana" data-seed="5" style="position:relative;width:100%;aspect-ratio:1.18;margin-bottom:3mm"></div><h2>Valenciana</h2><p class="sm" style="text-align:left">Es la receta tradicional y se prepara principalmente con pollo, conejo, arroz y verduras.</p></div>
-    <div><div class="art" data-paella="mariscos" data-seed="9" style="position:relative;width:100%;aspect-ratio:1.18;margin-bottom:3mm"></div><h2>De mariscos</h2><p class="sm" style="text-align:left">Incorpora productos del mar como langostinos, mejillones, calamares y gambas, generalmente con caldo de pescado.</p></div>
-    <div><div class="art" data-paella="mixta" data-seed="14" style="position:relative;width:100%;aspect-ratio:1.18;margin-bottom:3mm"></div><h2>Mixta</h2><p class="sm" style="text-align:left">Combina carnes, mariscos y verduras en una misma preparación.</p></div>
-    <div><div class="art" data-paella="verduras" data-seed="18" style="position:relative;width:100%;aspect-ratio:1.18;margin-bottom:3mm"></div><h2>De verduras</h2><p class="sm" style="text-align:left">Utiliza diferentes vegetales como alcauciles, pimientos y judías verdes.</p></div>
+    <div><img class="f" src="img/valenciana.jpg" style="height:66mm;margin-bottom:3mm"><h2>Valenciana</h2><p class="sm" style="text-align:left">Es la receta tradicional y se prepara principalmente con pollo, conejo, arroz y verduras.</p></div>
+    <div><img class="f" src="img/mariscos.jpg" style="height:66mm;margin-bottom:3mm"><h2>De mariscos</h2><p class="sm" style="text-align:left">Incorpora productos del mar como langostinos, mejillones, calamares y gambas, generalmente con caldo de pescado.</p></div>
+    <div><img class="f" src="img/mixta.jpg" style="height:66mm;margin-bottom:3mm"><h2>Mixta</h2><p class="sm" style="text-align:left">Combina carnes, mariscos y verduras en una misma preparación.</p></div>
+    <div><img class="f" src="img/verduras.jpg" style="height:66mm;margin-bottom:3mm"><h2>De verduras</h2><p class="sm" style="text-align:left">Utiliza diferentes vegetales como alcauciles, pimientos y judías verdes.</p></div>
   </div>
   <p class="lead" style="position:absolute;left:20mm;right:20mm;bottom:21mm;margin:0;text-align:center">Estas variedades demuestran cómo una preparación tradicional puede evolucionar y adaptarse a diferentes gustos sin perder su reconocimiento gastronómico.</p>
   <div class="folio"><span>Variedades</span></div>
@@ -447,7 +454,7 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
     </div>
   </div>
   <div class="quote" style="position:absolute;left:20mm;bottom:30mm;width:120mm">“Una vez que entra el arroz, no se revuelve.”<div class="lab" style="margin-top:4mm">La regla de oro</div></div>
-  <div class="art" data-paella="mixta" data-seed="23" style="right:-30mm;bottom:-96mm;width:180mm;height:180mm"></div>
+  <div class="ph" style="right:0;bottom:0;width:150mm;height:80mm"><img class="f" src="img/plato.jpg"></div>
   <div class="folio chip"><span>Consejos y servicio</span></div>
 </section>
 
@@ -471,7 +478,7 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
       <div class="box">
         <h3 style="color:var(--pim)">La paella en Argentina</h3>
         <p class="sm" style="text-align:left">En Argentina es muy común encontrar versiones elaboradas con mariscos, calamares, mejillones y langostinos.</p>
-        <div class="art" data-paella="mariscos" data-seed="30" style="position:relative;width:100%;height:46mm;margin-top:3mm"></div>
+        <img class="f" src="img/marisco2.jpg" style="height:46mm;margin-top:3mm">
       </div>
     </div>
   </div>
@@ -560,15 +567,15 @@ dl dd{font-size:9.1pt;line-height:1.4;margin-bottom:2.3mm}
       <li>Turismo de Valencia. <i>Historia y gastronomía tradicional valenciana.</i></li>
       <li>Generalitat Valenciana (2021). <i>Declaración de la paella valenciana como Bien de Interés Cultural inmaterial.</i></li>
       <li>Real Academia Española. <i>Diccionario de la lengua española</i>, voz «paella».</li>
+      <li style="margin-top:9mm;text-indent:0;margin-left:0"><h3 style="color:var(--pim)">Créditos de las fotografías</h3>
+      <span style="font-size:8.6pt;line-height:1.5;display:block">Todas las imágenes provienen de Wikimedia Commons y se reproducen bajo licencias libres. Pág. 4: Juan Emilio Prades Bel (CC BY 4.0). Pág. 5: Dorieo (CC BY-SA 4.0). Pág. 6: Retama (CC BY-SA 3.0) y Filo gèn' (CC BY-SA 4.0). Pág. 7: Juan Emilio Prades Bel (CC BY 4.0). Pág. 8: Ferbr1 (CC BY 3.0). Pág. 10: MiguelAlanCS (CC BY-SA 4.0). Pág. 11, de izquierda a derecha: Jan Harenburg (CC BY-SA 4.0), Manuel M. Vicente (CC BY 2.0), Tsumugii (CC BY-SA 4.0) y Avicentegil (CC BY-SA 4.0). Pág. 13: Juan Emilio Prades Bel (CC BY 4.0). Pág. 14: nikonvscanon, Flickr (CC BY 2.0).</span></li>
     </ul>
   </div>
-  <div class="art" data-paella="verduras" data-seed="40" style="left:112mm;bottom:-84mm;width:160mm;height:160mm"></div>
   <div class="folio chip"><span>Bibliografía</span></div>
 </section>
 
 <!-- 18 CONTRATAPA -->
 <section class="page dark" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-  <div class="art" data-paella="valenciana" data-seed="2" style="position:relative;width:62mm;height:62mm;margin-bottom:8mm"></div>
   <div class="quote" style="max-width:190mm;margin-bottom:8mm">Un plato de origen rural que se convirtió en símbolo cultural reconocido en todo el mundo.</div>
   <div class="rule" style="margin:0 auto 6mm"></div>
   <div class="lab" style="color:#A99C8A">Agostina Lucas Magenta · 1.º A · Cocina y Pastelería · 2026</div>
@@ -613,7 +620,7 @@ function paella(type,seed){
   return `<svg viewBox="-330 -300 660 600" xmlns="http://www.w3.org/2000/svg">${s}</svg>`}
 document.querySelectorAll('[data-paella]').forEach(e=>e.innerHTML=paella(e.dataset.paella,+e.dataset.seed));
 // diagrama del recipiente
-document.getElementById('pan').innerHTML=`<svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat" font-size="11.5" font-weight="600" fill="#231E19">
+(document.getElementById('pan')||{}).innerHTML=`<svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat" font-size="11.5" font-weight="600" fill="#231E19">
  <g transform="translate(280 150)">
   <rect x="-222" y="-22" width="50" height="44" rx="22" fill="none" stroke="#2A2420" stroke-width="9"/>
   <rect x="172" y="-22" width="50" height="44" rx="22" fill="none" stroke="#2A2420" stroke-width="9"/>
