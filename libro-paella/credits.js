@@ -26,5 +26,10 @@ window.CREDITS={
  "ajos": "Luis Miguel Bugallo Sánchez (Lmbuga) (CC BY-SA 3.0)",
  "mejillones": "H. Zell (CC BY-SA 3.0)",
  "tomatera": "George Chernilevsky (CC BY 4.0)",
- "langostinos": "Gordon Leggett (CC BY 4.0)"
+ "langostinos": "Gordon Leggett (CC BY 4.0)",
+ "sueca18": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca69": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca10": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca54": "Carlos Delgado (CC BY-SA 4.0)",
+ "sueca56": "Carlos Delgado (CC BY-SA 4.0)"
 };
